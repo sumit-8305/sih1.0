@@ -51,7 +51,7 @@ function Navbar() {
                     </ul>
 
                     {/* Search form */}
-                    <form className="hidden md:block w-1/6">
+                    <form className="hidden md:block w-1/5">
                         <label htmlFor="default-search" className="sr-only">Search</label>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
