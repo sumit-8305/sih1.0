@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import Landing from './components/Landing';
 import Navbar from './components/Navbar';
 import DocumentationPage from './components/DocumentationPage';
+import AboutUs from './components/aboutUs';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <Router>
+      
       <div>
         <ConditionalNavbar />
         <Routes>
@@ -44,7 +46,9 @@ const App = () => {
               )
             } 
           />
+          <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/docs" element={<DocumentationPage />} />
+          
         </Routes>
       </div>
     </Router>

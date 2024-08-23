@@ -24,6 +24,7 @@ function DocumentationNav() {
           </li>
           <li><Link to="/docs/api">API Reference</Link></li>
           <li><Link to="/docs/examples">Examples</Link></li>
+          <li><Link to="/aboutUs" style={{color:'#005792'}}>About Us</Link></li>
         </ul>
       </nav>
 
