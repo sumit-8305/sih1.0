@@ -1,0 +1,127 @@
+.documentation-container {
+  display: flex;
+  height: auto; 
+  margin-top: 15px; 
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #e9ecef;
+  overflow-y: auto;
+  position: fixed; 
+  top: 30px; 
+  height: calc(100vh - 15px);
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul ul {
+  padding-left: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #495057;
+  font-size: 14px;
+}
+
+.sidebar ul li a:hover {
+  color: #007bff;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  height: auto;
+  overflow-y: auto;
+}
+
+.content h2 {
+  margin-top: 0;
+  color: #212529;
+}
+
+.doc-page {
+  margin-left: 300px;
+  max-width: 800px;
+  position: relative;
+  overflow-x: auto;
+  flex-wrap: nowrap; 
+}
+
+.doc-page h1 {
+  margin-bottom: 20px;
+}
+
+.doc-page p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.CodeBlockClass {
+  position: relative;
+}
+
+.CopyButtonClass {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+  .documentation-container {
+    flex-direction: row; 
+    position: relative; 
+    flex-wrap: nowrap; 
+    height: 400vh;
+    width: 100vw;
+  }
+  .doc-page {
+    margin-left: 0px;
+    max-width: 800px;
+    position: relative;
+    overflow-x: auto;
+    flex-wrap: nowrap; 
+  }
+
+  .sidebar {
+    position: fixed; 
+    top: 0;
+    width: 150px;
+    height: 100vh; 
+    z-index: 1000;
+  }
+
+  .content {
+    margin-left: 0;
+    width: calc(100vw - 250px); /* responsive content area */
+  }
+
+  .doc-page {
+    max-width: none;
+    margin-left: 150px;
+    min-width: 500px; /* ensure doc-page has a minimum width */
+  }
+}
