@@ -19,6 +19,15 @@ const Authentication = () => {
                   <li>The hospital’s information is saved in the database, including a hashed version of the password for security.</li>
                   <li>Upon successful registration, the hospital is provided with credentials for logging in.</li>
                 </ol>
+            <li style={{fontWeight:"bold"}}>3. Key Features of Manushi Authentication</li>
+            <p style={{textIndent: "20px", fontWeight:'bold'}}>Secure Login Mechanism:</p>
+            <p style={{textIndent: "20px"}}>Manushi utilizes a standard username and password-based login system. Hospitals are provided with credentials during registration. When hospital maintainers log in, their credentials are authenticated against a secure, hashed password stored on the server. This prevents unauthorized access to hospital-specific data and ensures that only authenticated users can update bed information.</p>
+            <p style={{textIndent: "20px", fontWeight:'bold'}}>JSON Web Token (JWT) Based Authentication</p>
+            <p style={{textIndent: "20px"}}>Manushi implements JWT-based authentication to maintain security and session management. Once a user successfully logs in, the server issues a JWT token, which is then stored on the client side (in cookies or local storage). This token is sent with each subsequent request to protected endpoints, ensuring that the user remains authenticated without repeatedly logging in.</p>
+            <p style={{textIndent: "20px", fontWeight:'bold'}}>Hospital-Specific Access Control</p>
+            <p style={{textIndent: "20px"}}>Each hospital is assigned a unique ID during registration. When a hospital maintainer logs in, their JWT token contains this ID, which is then used to fetch and update bed availability specific to their hospital. Maintainers cannot view or modify data from other hospitals, ensuring strict role-based access control.</p>
+            <p style={{textIndent: "20px", fontWeight:'bold'}}>Password Hashing</p>
+            <p style={{textIndent: "20px"}}>Manushi uses industry-standard encryption and hashing techniques to store passwords securely. Passwords are never stored in plain text; instead, they are hashed using algorithms like bcrypt. Even if the database is compromised, hashed passwords provide a layer of protection against attackers.</p>
           </ol>
         </div>
       </div>
