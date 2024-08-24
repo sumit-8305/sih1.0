@@ -15,7 +15,7 @@ export default function Tiles() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % hospitalList.length);
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [hospitalList.length]);

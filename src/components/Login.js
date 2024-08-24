@@ -88,7 +88,7 @@ const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
               fontSize: '16px',
             }}
           ></input>
-          <button className='text-start font-semibold text-blue-600 m-2 ml-0'>Forgot password?</button>
+          <button className='text-start font-semibold text-blue-600 m-2 ml-0'><a href='https://youtu.be/tdgrxfz0F6Q?si=nYtJzmXBeizfRX_K'>Forgot Password?</a></button>
           <button className="font-semibold bg-[#D1F4FA] hover:bg-blue-200 active:bg-blue-300" 
             type="submit"
             style={{

@@ -1,17 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const Features = () => {
+const SectionSwitcher = () => {
+  const [activeSection, setActiveSection] = useState(1);
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case 1:
+        return <p>This is the content for Section 1.</p>;
+      case 2:
+        return <p>This is the content for Section 2.</p>;
+      case 3:
+        return <p>This is the content for Section 3.</p>;
+      case 4:
+        return <p>This is the content for Section 4.</p>;
+      case 5:
+        return <p>This is the content for Section 5.</p>;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className='relative overflow-hidden'
-    style={{
-      background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='768' height='696' viewBox='0 0 768 696' fill='none'%3E%3Cpath d='M70.4613 131C1.66127 92.2 -13.5387 -63 10.9613 -115H912.461L968.461 689C905.128 698.167 756.261 705 667.461 659C556.461 601.5 555.854 563.797 525.961 498.5C493 426.5 442.5 380.5 339 380.5C269.457 380.5 226.182 313.365 206.961 260C160.5 131 156.461 179.5 70.4613 131Z' fill='%23D1F4FC'/%3E%3C/svg%3E") no-repeat top right`,
-      backgroundSize: 'contain',
-      height: 'auto',
-      rotate: (180,0,0),
-    }}>
-      <h1 className='text-9xl'>hello these are features </h1>
-    </div>
-  )
-}
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Section Switcher</h1>
+      <div className="flex justify-around mb-8">
+        <button
+          className={`p-2 rounded-lg ${activeSection === 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveSection(1)}
+        >
+          Section 1
+        </button>
+        <button
+          className={`p-2 rounded-lg ${activeSection === 2 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveSection(2)}
+        >
+          Section 2
+        </button>
+        <button
+          className={`p-2 rounded-lg ${activeSection === 3 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveSection(3)}
+        >
+          Section 3
+        </button>
+        <button
+          className={`p-2 rounded-lg ${activeSection === 4 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveSection(4)}
+        >
+          Section 4
+        </button>
+        <button
+          className={`p-2 rounded-lg ${activeSection === 5 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          onClick={() => setActiveSection(5)}
+        >
+          Section 5
+        </button>
+      </div>
 
-export default Features;
+      <div className="content bg-gray-100 p-4 rounded-lg shadow-md">
+        {renderContent()}
+      </div>
+    </div>
+  );
+};
+
+export default SectionSwitcher;
