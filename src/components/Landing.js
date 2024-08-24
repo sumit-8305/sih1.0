@@ -31,7 +31,7 @@ const Landing = () => {
       </div>
 
       {/* About */}
-      <div className='bg-gray-900 text-white mt-24 mb-25 p-5'>
+      <div className='bg-[#d1f4fa] text-black mt-24 mb-25 p-5'>
         <h1 className='text-3xl font-bold m-5 text-center md:text-left'>About</h1>
         <hr className='m-6'/>
         <p className='m-5 text-lg md:text-xl leading-relaxed'>
