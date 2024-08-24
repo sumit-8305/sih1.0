@@ -1,6 +1,6 @@
 .documentation-container {
   display: flex;
-  height: 790vh; 
+  height: 800vh; 
   margin-top: 15px; 
   font-family: Arial, sans-serif;
 }
@@ -95,7 +95,7 @@
     flex-direction: row; 
     position: relative; 
     flex-wrap: nowrap; 
-    height: 400vh;
+    height: 1000vh;
     width: 100vw;
   }
   .doc-page {
@@ -124,4 +124,15 @@
     margin-left: 150px;
     min-width: 500px; /* ensure doc-page has a minimum width */
   }
+}
+
+@media (max-width: 1000px) {
+  .documentation-container {
+    flex-direction: row; 
+    position: relative; 
+    flex-wrap: nowrap; 
+    height: 900vh;
+    width: 100vw;
+  }
+
 }
