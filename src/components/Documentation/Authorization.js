@@ -3,7 +3,7 @@ const Authentication = () => {
     <div className="documentation-container" id='autherization'>
       <div className="content">
         <div className="doc-page">
-          <h1 style={{fontSize:"35px"}} >Autherization</h1>
+          <h1 style={{fontSize:"35px"}} >Authorization</h1>
           <p>
             Manushi is a web application designed to display real-time OPD bed availability for multiple hospitals. It includes features for hospital maintainers to manage their bed availability and provides an API for sharing this data. Authorization in Manushi ensures that only authorized users can access and modify specific hospital data.
           </p>

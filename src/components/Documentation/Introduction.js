@@ -3,7 +3,7 @@ import '../css/Documentation.css';
 
 function Introduction() {
   return (
-    <div className="documentation-container">
+    <div className="documentation-container" id="intro">
       <div className="content">
         <div className="doc-page">
           <h1 style={{fontSize:"35px"}}>Introduction</h1>
