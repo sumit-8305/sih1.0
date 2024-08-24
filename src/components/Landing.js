@@ -1,5 +1,7 @@
 import React from 'react';
 import Tiles from './Tiles';
+import Footer from './Footer';
+import Features from './Features';
 
 const Landing = () => {
   return (
@@ -39,6 +41,8 @@ const Landing = () => {
           Our platform was created by a passionate tech enthusiast currently pursuing a B.Tech in Computer Science at NSUT Delhi. With a strong background in web development and a deep commitment to leveraging technology for social good, we have developed this platform to address some of the most pressing challenges in healthcare access today.
         </p>
       </div>
+      <Features/>
+      <Footer/>
     </>
   )
 }

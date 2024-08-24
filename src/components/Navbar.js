@@ -29,7 +29,7 @@ function Navbar() {
                     {/* Desktop menu */}
                     <ul className='hidden md:flex justify-center gap-6 text-md font-bold'>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">Real Time Bed Status</Link></li>
+                        <li><Link to="/bedStatus">Real Time Bed Status</Link></li>
                         <li className="relative">
                             <button onClick={toggleOPDDropdown} className="flex items-center">
                                 OPD

@@ -6,6 +6,10 @@ import Landing from './components/Landing';
 import Navbar from './components/Navbar';
 import DocumentationPage from './components/DocumentationPage';
 import AboutUs from './components/aboutUs';
+import BedStatus from './components/BedStatus';
+import Contact from './components/Contact';
+import Licensing from './components/Documentation/Licensing';
+import PrivacyPolicy from './components/Documentation/PrivacyPolicy';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,6 +23,7 @@ const App = () => {
         <ConditionalNavbar />
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/bedStatus" element={<BedStatus/>} />
           <Route 
             path="/login" 
             element={
@@ -47,6 +52,9 @@ const App = () => {
             } 
           />
           <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacyPolicy" element={<PrivacyPolicy/>} />
+          <Route path="/licensing" element={<Licensing/>} />
           <Route path="/docs" element={<DocumentationPage />} />
           
         </Routes>
