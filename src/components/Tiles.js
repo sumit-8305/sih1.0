@@ -24,7 +24,7 @@ export default function Tiles() {
 
   return (
     <>
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center mt-40'>
         {/* Responsive image handling */}
         <img
           src={hospital.imageURL}

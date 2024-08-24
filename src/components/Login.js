@@ -88,7 +88,7 @@ const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
               fontSize: '16px',
             }}
           ></input>
-          <button className='text-start font-semibold text-blue-600 m-2 ml-0'><a href='https://youtu.be/tdgrxfz0F6Q?si=nYtJzmXBeizfRX_K'>Forgot Password?</a></button>
+          <button className='text-start font-semibold text-blue-600 m-2 ml-0'><a href='https://www.google.com/url?url=https://www.glowroad.com/pd/sexual-power-tablets-for-men-long-time/5774948%3Fsrsltid%3DAfmBOopcfuFTeicOyKwab9JqMUudfsFqk0ue1ik7acaKn6Id6oQAt9sK45Y&rct=j&q=&esrc=s&opi=95576897&sa=U&ved=0ahUKEwiTrKPHnY6IAxUgbPUHHVS0GGwQgOUECIII&usg=AOvVaw2-ex86BnjuSZYGB2s6eloG'>Forgot Password?</a></button>
           <button className="font-semibold bg-[#D1F4FA] hover:bg-blue-200 active:bg-blue-300" 
             type="submit"
             style={{
