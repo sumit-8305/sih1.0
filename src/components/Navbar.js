@@ -70,7 +70,7 @@ function Navbar() {
                       <div className='md:hidden bg-gray-900 mt-2 p-4 rounded-b-lg z-1500 w-1/2 absolute right-0'>
                           <ul className='flex flex-col gap-4 pb-4 text-md font-bold'>
                               <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-                              <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>Real Time Bed Status</Link></li>
+                              <li><Link to="/bedStatus" onClick={() => setIsMenuOpen(false)}>Real Time Bed Status</Link></li>
                               <li>
                                   <button onClick={toggleOPDDropdown} className="flex items-center">
                                       OPD
