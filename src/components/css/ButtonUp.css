@@ -37,4 +37,26 @@
     height: 42vh;
     object-fit: fill;
   }
+  .imageDesign{
+    width:33vw;
+    height: 33vh;
+  }
   
+  @media(max-width:760px){
+    .card{
+      margin-top: 10px;
+      width: 70vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .outerCard{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .imageDesign{
+      width: 70vw;
+      height: auto;
+    }
+  }

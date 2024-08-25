@@ -16,10 +16,10 @@ const Landing = () => {
         }}
       ><div className='flex md:flex-row flex-col gap-52'>
         <div>
-        <h1 className='mt-32 md:ml-40 ml-2 text-9xl text-black font-semibold'>Manushi</h1>
-        <h1 className='mt-22 md:ml-80 ml-2 font-semibold text-6xl'>By Us, For Us</h1>
+        <h1 className='mt-32 md:mt-96 md:ml-28 ml-2 text-8xl text-gray-900 font-semibold'>Manushi</h1>
+        <h1 className='mt-22 md:mt-0  float-right ml-2 font-semibold text-gray-900 text-3xl'>By Us, For Us</h1>
         </div>
-        <img className='mt-32 md:scale-150 scale-100 rounded-full border-b-2 border-gray-900' src="/images/group_doctors-removebg-preview.jpg"></img>
+        <img className='mt-48 mr-32 md:scale-150 scale-100 rounded-full border-b-2 border-gray-900' src="/images/group_doctors-removebg-preview.jpg"></img>
       </div>
 
         {/* category */}
@@ -31,10 +31,7 @@ const Landing = () => {
           <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-xl text-center border-2 border-black transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#FFD600' }}>
             OPD
           </button>
-          <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#FFD600', color: 'black' }}>
-            Special OPD
-
-          </button>
+          
           <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-xl text-center border-2 border-black transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#FF00008F' }}>
             Emergency
           </button>
@@ -47,7 +44,7 @@ const Landing = () => {
       {/* About */}
       <div className='bg-[#d1f4fa] text-black mt-24 mb-25 p-5'>
         <h1 className='text-4xl font-bold m-5 text-center md:text-left'>About</h1>
-        <hr className='h-px bg-gray-700'/>
+        <hr className='h-px bg-black'/>
         <p className='m-5 text-lg md:text-xl leading-relaxed'>
           Welcome to Find Your Hospital, your go-to platform for reliable and up-to-date healthcare information. We are committed to bridging the gap between patients and essential healthcare services, ensuring that you have access to critical resources when you need them the most. At Find Your Hospital, our mission is to empower individuals with the information they need to make informed healthcare decisions. Whether you're searching for available hospital beds, nearby medicine dispensaries, or the closest medical facilities, our platform is designed to provide you with accurate and timely data.
         </p>

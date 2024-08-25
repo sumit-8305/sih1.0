@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { hospitalList } from '../assets/hospitalData';
+import '../components/css/ButtonUp.css';
 
 export default function Tiles() {
   const [index, setIndex] = useState(0);
@@ -28,7 +29,7 @@ export default function Tiles() {
       </h1>
       <div className='flex flex-col items-center '>
         {/* Responsive image handling */}
-        <div className='w-1/3 h-1/3'>
+        <div className='imageDesign' >
         <img
           src={hospital.imageURL}
           alt={hospital.alt}
@@ -37,7 +38,7 @@ export default function Tiles() {
         </div>
         
         {/* Responsive text container */}
-        <div className='flex flex-col sm:flex-row justify-center sm:gap-4 gap-2 px-2 py-2 w-full bg-gray-200 text-center sm:text-left text-lg sm:text-4xl'>
+        <div className='flex flex-col sm:flex-row justify-center sm:gap-4 gap-2 px-2 py-2 w-full bg-gray-200 text-center sm:text-left text-lg sm:text-4xl sm:mt-64'>
           <h1 className='font-semibold'>{hospital.name}</h1>
           <p className='hidden sm:block'>|</p>
           <p className='font-semibold'>{hospital.location}</p>
