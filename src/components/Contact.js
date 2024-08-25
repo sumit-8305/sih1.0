@@ -45,14 +45,14 @@ const Contact = () => {
         padding: '20px',
       }}
     >
-      <img className="transform scale-x-[-1]" src="/images/doctor-hand-pointing-Photoroom.png" width={564.8} height={600} alt='doctor image'></img>
+      {/* <img className="transform scale-x-[-1]" src="/images/doctor-hand-pointing-Photoroom.png" width={564.8} height={600} alt='doctor image'></img> */}
       <div className='border-2 border-gray-700 shadow-2xl rounded-2xl p-8'>
-        <div className="flex gap-3 text-4xl font-bold" style={{ color: 'black', marginBottom: '20px', marginRight: '310px' }}>
+        <div className="flex gap-3 text-4xl font-bold mr-40 mb-5">
           <svg className='scale-150' xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12Z" /></svg>
           <h1>Contact Us</h1>
         </div>
 
-        <div style={{ maxWidth: '400px', width: '100%' }}>
+        <div className='w-full sm:max-w-md max-w-sm'>
           <form  
           // onClick={handleSubmit}
            style={{ display: 'flex', flexDirection: 'column' }}>

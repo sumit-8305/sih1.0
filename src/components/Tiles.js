@@ -28,11 +28,13 @@ export default function Tiles() {
       </h1>
       <div className='flex flex-col items-center '>
         {/* Responsive image handling */}
+        <div className='w-1/3 h-1/3'>
         <img
           src={hospital.imageURL}
           alt={hospital.alt}
           className='rounded-xl m-4 w-full sm:w-auto sm:h-96 h-64 object-cover'
         />
+        </div>
         
         {/* Responsive text container */}
         <div className='flex flex-col sm:flex-row justify-center sm:gap-4 gap-2 px-2 py-2 w-full bg-gray-200 text-center sm:text-left text-lg sm:text-4xl'>

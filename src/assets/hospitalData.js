@@ -23,7 +23,7 @@ export const hospitalList = [{
     imageURL: "./hospital_img/image-3.avif",
     alt: "Cant get image :(",
     },{
-    name: "Deen Dayal Upadhyay hospital",
+    name: "Deen Dayal Upadhyay Hospital",
     location: "New Delhi",
     helpline: "9891143620",
     imageURL: "./hospital_img/image-4.png",
