@@ -1,0 +1,40 @@
+.card {
+    position: relative;
+    width: 32vw;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .title {
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+  
+  .description {
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 25px;
+  }
+  
+  .group:hover .title {
+    opacity: 0;
+  }
+  
+  .group:hover .description {
+    opacity: 1;
+  }
+  img {
+    width: 28vw;
+    height: 42vh;
+    object-fit: fill;
+  }
+  

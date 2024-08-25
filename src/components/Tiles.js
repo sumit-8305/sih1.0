@@ -23,8 +23,10 @@ export default function Tiles() {
   let hospital = hospitalList[index];
 
   return (
-    <>
-      <div className='flex flex-col items-center mt-40'>
+    <><h1 className=' mt-40 flex flex-col sm:flex-row justify-center sm:gap-4 gap-2 px-2 py-2 w-full  text-center sm:text-left text-lg sm:text-4xl'>
+        Hospitals Registered
+      </h1>
+      <div className='flex flex-col items-center '>
         {/* Responsive image handling */}
         <img
           src={hospital.imageURL}

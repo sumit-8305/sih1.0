@@ -1,6 +1,7 @@
 import React from 'react';
 import Tiles from './Tiles';
 import Footer from './Footer';
+import ButtonUp from './ButtonUp';
 import Features from './Features';
 
 const Landing = () => {
@@ -14,26 +15,27 @@ const Landing = () => {
           height: 'auto',
         }}
       >
+        <ButtonUp />
         {/* category */}
-        <div className='m-8 flex flex-col md:flex-row justify-center md:gap-8 gap-4 text-white items-center' style={{marginTop:'500px',}}>
-          <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{background: '#47E28E'}}>
+        <div className='m-8 flex flex-col md:flex-row justify-center md:gap-8 gap-4 text-white items-center mt-20' >
+          <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#47E28E' }}>
             General
           </button>
-          <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{background: '#FFD600'}}>
+          <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#FFD600' }}>
             OPD
           </button>
-          <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{background: '#FF00008F'}}>
+          <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#FF00008F' }}>
             Emergency
           </button>
         </div>
 
-        <Tiles/>
+        <Tiles />
       </div>
 
       {/* About */}
       <div className='bg-[#d1f4fa] text-black mt-24 mb-25 p-5'>
         <h1 className='text-3xl font-bold m-5 text-center md:text-left'>About</h1>
-        <hr className='m-6'/>
+        <hr className='m-6' />
         <p className='m-5 text-lg md:text-xl leading-relaxed'>
           Welcome to Find Your Hospital, your go-to platform for reliable and up-to-date healthcare information. We are committed to bridging the gap between patients and essential healthcare services, ensuring that you have access to critical resources when you need them the most. At Find Your Hospital, our mission is to empower individuals with the information they need to make informed healthcare decisions. Whether you're searching for available hospital beds, nearby medicine dispensaries, or the closest medical facilities, our platform is designed to provide you with accurate and timely data.
         </p>
@@ -41,8 +43,21 @@ const Landing = () => {
           Our platform was created by a passionate tech enthusiast currently pursuing a B.Tech in Computer Science at NSUT Delhi. With a strong background in web development and a deep commitment to leveraging technology for social good, we have developed this platform to address some of the most pressing challenges in healthcare access today.
         </p>
       </div>
-      <Features/>
-      <Footer/>
+      <Features />
+      {/* new section */}
+      <div className='mt-12 border-2'>
+        <h3 className='text-center'>Manushi Benifits</h3>
+        <div className="grid grid-cols-2 gap-4 p-4 ">
+          <div className="bg-gray-200 p-4 rounded shadow">Item 1</div>
+          <div className="bg-gray-200 p-4 rounded shadow">Item 2</div>
+          <div className="bg-gray-200 p-4 rounded shadow">Item 3</div>
+          <div className="bg-gray-200 p-4 rounded shadow">Item 4</div>
+          <div className="bg-gray-200 p-4 rounded shadow">Item 5</div>
+          <div className="bg-gray-200 p-4 rounded shadow">Item 6</div>
+        </div>
+      </div>
+
+      <Footer />
     </>
   )
 }

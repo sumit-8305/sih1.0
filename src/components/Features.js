@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SectionSwitcher = () => {
+const Features = () => {
   const [activeSection, setActiveSection] = useState(1);
 
   const renderContent = () => {
@@ -63,4 +63,4 @@ const SectionSwitcher = () => {
   );
 };
 
-export default SectionSwitcher;
+export default Features;
