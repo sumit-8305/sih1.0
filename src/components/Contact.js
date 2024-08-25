@@ -8,16 +8,14 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_s1qwtm5', 'template_lgtdgtt', form.current, {
-        publicKey: 'PpJ4o52xWVf5oSbEQ',
-      })
+      .sendForm('service_s1qwtm5', 'template_lgtdgtt', form.current, 'PpJ4o52xWVf5oSbEQ')
       .then(
         () => {
           console.log('SUCCESS!');
         },
         (error) => {
           console.log('FAILED...', error.text);
-        },
+        }
       );
   };
 
@@ -33,83 +31,6 @@ const Contact = () => {
         padding: '20px',
       }}
     >
-
-      {/* <img className="transform scale-x-[-1]" src="/images/doctor-hand-pointing-Photoroom.png" width={564.8} height={600} alt='doctor image'></img> */}
-      <div className='border-2 border-gray-700 shadow-2xl rounded-2xl p-8'>
-        <div className="flex gap-3 text-4xl font-bold mr-40 mb-5">
-          <svg className='scale-150' xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12Z" /></svg>
-          <h1>Contact Us</h1>
-        </div>
-
-        <div className='w-full sm:max-w-md max-w-sm'>
-          <form  
-          // onClick={handleSubmit}
-           style={{ display: 'flex', flexDirection: 'column' }}>
-            {/* {error && <p style={{ color: 'red', marginBottom: '10px' }}>{error}</p>} */}
-            <input
-              type="text"
-              placeholder="Email ID"
-              required
-              // value={email}
-              // onChange={(e) => setEmail(e.target.value)}
-              style={{
-                padding: '10px',
-                margin: '10px 0',
-                color: 'black',
-                border: '1px solid black',
-                borderRadius: '5px',
-                fontSize: '16px',
-              }}
-            />
-            <input
-              type="text"
-              //value={phone}
-              // onChange={(e) => setPhone(e.target.value)}
-              placeholder="Phone No."
-              required
-              style={{
-                padding: '10px',
-                margin: '10px 0',
-                color: 'black',
-                border: '1px solid black',
-                borderRadius: '5px',
-                fontSize: '16px',
-              }}
-            />
-            <textarea
-              className='w-full h-56'
-              type="text"
-              //value={message}
-              // onChange={(e) => setMessage(e.target.value)}
-              placeholder="Message..."
-              required
-              style={{
-                padding: '10px',
-                margin: '10px 0',
-                color: 'black',
-                border: '1px solid black',
-                borderRadius: '5px',
-                fontSize: '16px',
-              }}
-            />
-            
-            <button className="font-semibold bg-[#D1F4FA] hover:bg-blue-200 active:bg-blue-300"
-              type="submit"
-              
-              style={{
-                padding: '10px',
-                margin: '10px 0',
-                color: 'black',
-                border: '1px solid black',
-                borderRadius: '5px',
-                fontSize: '16px',
-                cursor: 'pointer',
-              }}
-            >
-              Submit
-            </button>
-          </form>
-
       <div
         className="backdrop-blur-md bg-white/60 shadow-xl rounded-xl p-8 max-w-md w-full"
         style={{
@@ -118,9 +39,7 @@ const Contact = () => {
         }}
       >
         <div className="text-3xl font-bold mb-6 flex items-center justify-center text-black">
-
           Contact Us
-
         </div>
 
         <form ref={form} onSubmit={sendEmail} className="space-y-4">

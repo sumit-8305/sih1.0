@@ -30,7 +30,7 @@ const Landing = () => {
 
           <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-xl text-center border-2 border-black transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#FFD600' }}>
             OPD
-
+          </button>
           <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#FFD600', color: 'black' }}>
             Special OPD
 
