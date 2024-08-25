@@ -15,9 +15,8 @@ const Landing = () => {
           height: 'auto',
         }}
       >
-        <ButtonUp />
         {/* category */}
-        <div className='m-8 flex flex-col md:flex-row justify-center md:gap-8 gap-4 text-white items-center mt-20' >
+        <div className='m-8 flex flex-col md:flex-row justify-center md:gap-8 gap-4 text-white items-center ' style={{marginTop:"500px"}}>
           <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-lg text-center transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#47E28E' }}>
             General
           </button>
@@ -30,6 +29,7 @@ const Landing = () => {
         </div>
 
         <Tiles />
+        <ButtonUp />
       </div>
 
       {/* About */}

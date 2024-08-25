@@ -6,8 +6,10 @@ import logo3 from'../assets/logos/purpose.png';
 
 const ButtonUp = () => {
   return (
-    <div className="p-4 mt-20">
-      <div className="flex flex-col md:flex-row md:space-x-4 md:justify-between">
+    <div className="p-4 mt-10">
+      <h1 className='text-center text-6xl'>Manushi !</h1>
+      <h3 className='text-center text-xl'>By Us , For Us</h3>
+      <div className="flex flex-col md:flex-row md:space-x-4 md:justify-between mt-16">
         <div className="card card1 group relative flex items-center justify-center w-full md:w-1/3 h-[320px]  text-2xl font-bold rounded-lg cursor-pointer">
           <img className="title z-10 group-hover:opacity-0 transition-opacity duration-300" src={logo3}/>
           <div className="absolute inset-0 flex items-center justify-center text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">

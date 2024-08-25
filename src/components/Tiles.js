@@ -23,7 +23,7 @@ export default function Tiles() {
   let hospital = hospitalList[index];
 
   return (
-    <><h1 className=' mt-40 flex flex-col sm:flex-row justify-center sm:gap-4 gap-2 px-2 py-2 w-full  text-center sm:text-left text-lg sm:text-4xl'>
+    <><h1 className=' font-bold mt-40 flex flex-col sm:flex-row justify-center sm:gap-4 gap-2 px-2 py-2 w-full  text-center sm:text-left text-lg sm:text-4xl'>
         Hospitals Registered
       </h1>
       <div className='flex flex-col items-center '>
@@ -36,7 +36,7 @@ export default function Tiles() {
         
         {/* Responsive text container */}
         <div className='flex flex-col sm:flex-row justify-center sm:gap-4 gap-2 px-2 py-2 w-full bg-gray-200 text-center sm:text-left text-lg sm:text-4xl'>
-          <h1 className='font-bold'>{hospital.name}</h1>
+          <h1 className='font-semibold'>{hospital.name}</h1>
           <p className='hidden sm:block'>|</p>
           <p className='font-semibold'>{hospital.location}</p>
           <p className='hidden sm:block'>|</p>
