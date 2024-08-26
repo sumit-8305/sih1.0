@@ -7,16 +7,21 @@ const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
   const [uniqueId, setUniqueIdState] = useState('');
   const [error, setError] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await login(username, password);
-      setUniqueId(uniqueId);
-      setIsLoggedIn(true);
-    } catch (error) {
-      setError('Invalid credentials. Please try again.');
-    }
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await login(username, password); // Assuming the login function returns user data
+    sessionStorage.setItem('isLoggedIn', true);
+    sessionStorage.setItem('hospitalName', response.hospitalName); // Store hospital name
+    sessionStorage.setItem('uniqueId', uniqueId); // Store unique ID
+    setUniqueId(uniqueId);
+    setHospitalName(response.hospitalName);
+    setIsLoggedIn(true);
+  } catch (error) {
+    setError('Invalid credentials. Please try again.');
+  }
+};
+
 
   return (
     <div

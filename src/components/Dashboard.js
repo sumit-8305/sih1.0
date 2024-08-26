@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { updateBedAvailability, getBedAvailability } from '../services/api';
-import Navbar from './Admin/Navbar';
+import NavbarAdm from './Admin/Navbar';
+import Inventory from './Inventory';
 
-const Dashboard = ({ setHospitalName, uniqueId }) => {
+const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
   const [hospitals, setHospitals] = useState([]);
   const [availableBeds, setAvailableBeds] = useState(0);
   const [currentHospital, setCurrentHospital] = useState(null);
@@ -70,7 +71,7 @@ const Dashboard = ({ setHospitalName, uniqueId }) => {
 
   return (
     <div>
-      <Navbar />
+      <NavbarAdm />
       <h2 style={{ justifyContent: "center", textAlign: 'center', paddingTop: '12px' }}>Dashboard</h2>
       <div style={{ justifyContent: "center", textAlign: 'center', gap: '10px' }}>
         <input
@@ -154,6 +155,7 @@ const Dashboard = ({ setHospitalName, uniqueId }) => {
             textAlign: 'center',
           }}
         >
+        <Inventory  uniqueId={uniqueId} hospitalName={hospitalName} />
           All Hospitals
         </h3>
 
