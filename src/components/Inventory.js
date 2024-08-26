@@ -7,7 +7,6 @@ const Inventory = ({ uniqueId, hospitalName }) => {
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState(null);
 
-  // Function to fetch inventory
   const fetchInventory = async () => {
     try {
       const data = await getInventory(uniqueId);

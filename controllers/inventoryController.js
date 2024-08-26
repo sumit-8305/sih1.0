@@ -1,4 +1,3 @@
-// controllers/inventoryController.js
 
 const Inventory = require('../models/Inventory');
 const Hospital = require('../models/Hospitals');
