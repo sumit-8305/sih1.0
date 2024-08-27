@@ -65,3 +65,38 @@ export const updateInventory = async (uniqueId, item) => {
     throw error;
   }
 };
+
+
+
+// Increase item quantity
+export const increaseItemQuantity = async (uniqueId, itemId) => {
+  try {
+    const response = await axios.put(`${API_URL}/inventory/items/${uniqueId}/${itemId}/increase`);
+    return response.data;
+  } catch (error) {
+    console.error('Error increasing item quantity:', error);
+    throw error;
+  }
+};
+
+// Decrease item quantity
+export const decreaseItemQuantity = async (uniqueId, itemId) => {
+  try {
+    const response = await axios.put(`${API_URL}/inventory/items/${uniqueId}/${itemId}/decrease`);
+    return response.data;
+  } catch (error) {
+    console.error('Error decreasing item quantity:', error);
+    throw error;
+  }
+};
+
+// Delete item
+export const deleteInventoryItem = async (uniqueId, itemId) => {
+  try {
+    const response = await axios.delete(`${API_URL}/inventory/items/${uniqueId}/${itemId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting inventory item:', error);
+    throw error;
+  }
+};

@@ -8,6 +8,7 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
   const [availableBeds, setAvailableBeds] = useState(0);
   const [currentHospital, setCurrentHospital] = useState(null);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchHospitalNameByUniqueId = async (uniqueId) => {
     try {
@@ -17,13 +18,19 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
       const hospital = hospitals.find(hospital => hospital.uniqueId === uniqueId);
       if (hospital) {
         setHospitalName(hospital.name);
-        setCurrentHospital(hospital);
+        // Add a 2-second delay before setting the current hospital
+        setTimeout(() => {
+          setCurrentHospital(hospital);
+          setIsLoading(false);
+        }, 2000);
       } else {
         setError('Hospital not found');
+        setIsLoading(false);
       }
     } catch (error) {
       console.error('Error fetching hospital data:', error);
       setError('Error fetching hospital data');
+      setIsLoading(false);
     }
   };
 
@@ -111,7 +118,9 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        {currentHospital && (
+        {isLoading ? (
+          <p>Loading current hospital details...</p>
+        ) : currentHospital ? (
           <div style={{ textAlign: 'center', margin: '10px 0' }}>
             <h3
               style={{
@@ -139,8 +148,8 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
               Available Beds: {currentHospital.availableBeds} / Total Beds: {currentHospital.totalBeds}
             </p>
           </div>
-        )}
-
+        ) : null}
+        <Inventory  uniqueId={uniqueId} hospitalName={hospitalName} />
         <h3
           style={{
             padding: '5px 20px',
@@ -155,7 +164,7 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
             textAlign: 'center',
           }}
         >
-        <Inventory  uniqueId={uniqueId} hospitalName={hospitalName} />
+        
           All Hospitals
         </h3>
 
