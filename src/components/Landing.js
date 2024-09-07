@@ -229,6 +229,8 @@ const Landing = () => {
         </div>
       </div>
 
+      
+
 
       {/* category */}
       {/* <div className='m-8 flex flex-col md:flex-row justify-center md:gap-8 gap-4 text-black font-medium items-center ' style={{ marginTop: "150px" }}>
@@ -256,6 +258,11 @@ const Landing = () => {
         </p>
       </div> */}
 
+      <section>
+<video autoPlay loop playsInline muted>
+        <source src="Videos/Video.mp4" type='video/mp4'/>
+      </video>
+      </section>
       <Footer />
     </>
   )
