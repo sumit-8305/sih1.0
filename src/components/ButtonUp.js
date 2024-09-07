@@ -6,7 +6,7 @@ import logo3 from'../assets/logos/purpose.png';
 
 const ButtonUp = () => {
   return (
-    <div className="outerCard p-4 mt-10">
+    <div className="outerCard p-4 mt-10 bg-[#fc5f2b]">
       <div className="flex flex-col md:flex-row md:space-x-4 md:justify-between mt-16">
         <div className="card card1 group relative flex items-center justify-center w-full md:w-1/3 h-[320px]  text-2xl font-bold rounded-lg cursor-pointer">
           <img className="title z-10 group-hover:opacity-0 transition-opacity duration-300" src={logo3}/>

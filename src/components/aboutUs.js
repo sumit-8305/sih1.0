@@ -1,46 +1,59 @@
 import React from 'react';
-import Introduction from './Documentation/Introduction';
+import { motion } from "framer-motion";
+
+
+const fadeIn = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+    },
+  },
+};
 
 function aboutUs() {
   return (
     <>
-    <div
-    style={{
-      background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='768' height='696' viewBox='0 0 768 696' fill='none'%3E%3Cpath d='M70.4613 131C1.66127 92.2 -13.5387 -63 10.9613 -115H912.461L968.461 689C905.128 698.167 756.261 705 667.461 659C556.461 601.5 555.854 563.797 525.961 498.5C493 426.5 442.5 380.5 339 380.5C269.457 380.5 226.182 313.365 206.961 260C160.5 131 156.461 179.5 70.4613 131Z' fill='%23D1F4FC'/%3E%3C/svg%3E") no-repeat right top`,
-      backgroundSize: 'contain',
-      height: '100vh', 
-      backgroundPosition: 'right top',
-      backgroundAttachment: 'fixed', 
-      backgroundRepeat: 'no-repeat',
-      padding: '20px',
-    }}
-    >
-      <h1 className='mt-32 ml-10 text-8xl font-semibold'>About Us</h1>
-      <hr></hr>
-      <div className='mt-4 ml-10 w-22 text-xl'>
-        <p>Welcome to Find Your Hospital, your trusted platform for reliable, up-to-date healthcare information tailored to your needs. In today's fast-paced world, navigating the healthcare system can be challenging, especially during critical moments when time is of the essence. We are here to bridge the gap between patients and essential healthcare services, ensuring you have quick and easy access to the resources that matter. </p>
-        <br></br>
-        <p>We understand that healthcare is not just about finding the right place—it's about finding it at the right time. That's why our platform is continuously updated with accurate and real-time data, giving you peace of mind when you need it most. We are committed to providing a user-friendly experience, ensuring that even in the most stressful situations, you can quickly find the information you need.</p>
+    <motion.div 
+      variants = {fadeIn}
+      initial="initial"
+      whileInView = "animate"
+      viewport = {{
+        once: true,
+      }}
+    className='mt-28 mb-5'>
+      <div>
+        <h1 className='mt-32 text-xl text-center'><u>Manushi Innovations</u></h1>
+        <h1 className=' ml-10 text-8xl font-semibold text-center pt-10'>About Us</h1>
+        <div className='mt-12 ml-96 mr-96 pb-10 pt-4 w-auto text-xl text-center'>
+          <p>Welcome to Manushi, your trusted platform for reliable, up-to-date healthcare information tailored to your needs. In today's fast-paced world, navigating the healthcare system can be challenging, especially during critical moments when time is of the essence. We are here to bridge the gap between patients and essential healthcare services, ensuring you have quick and easy access to the resources that matter. </p>
+          <br></br>
+          <p>We understand that healthcare is not just about finding the right place—it's about finding it at the right time. That's why our platform is continuously updated with accurate and real-time data, giving you peace of mind when you need it most. We are committed to providing a user-friendly experience, ensuring that even in the most stressful situations, you can quickly find the information you need.</p>
+        </div>
       </div>
 
-
-      <h1 className='mt-32 ml-10 text-8xl font-semibold'>Our Mission</h1>
-      <hr></hr>
-      <div className='mt-4 ml-10 w-22 text-xl'>
-        <p>Welcome to Find Your Hospital, your trusted platform for reliable, up-to-date healthcare information tailored to your needs. In today's fast-paced world, navigating the healthcare system can be challenging, especially during critical moments when time is of the essence. We are here to bridge the gap between patients and essential healthcare services, ensuring you have quick and easy access to the resources that matter. </p>
-        <br></br>
-        <p>We understand that healthcare is not just about finding the right place—it's about finding it at the right time. That's why our platform is continuously updated with accurate and real-time data, giving you peace of mind when you need it most. We are committed to providing a user-friendly experience, ensuring that even in the most stressful situations, you can quickly find the information you need.</p>
+      <div className='bg-[#FC5F2B] text-white'>
+        <h1 className='mt-32 ml-10 text-8xl font-semibold text-center pt-10'>Our Mission</h1>
+        <hr></hr>
+        <div className='mt-12 ml-96 mr-96 pb-10 pt-4 w-auto text-xl text-center'>
+          <p>At Manushi, our mission is to enhance healthcare accessibility by leveraging technology to streamline hospital management and patient services. We aim to provide hospitals with cutting-edge tools that facilitate real-time monitoring of bed availability, OPD bookings, and nearby dispensary services, ensuring that patients receive timely care. By optimizing hospital operations and making vital data easily accessible, we seek to bridge the gap between medical facilities and the people who need them the most. </p>
+          <br></br>
+          <p>We believe that healthcare should be transparent, efficient, and easily accessible for all. Manushi is committed to empowering hospitals with the tools they need to deliver quality care and enabling patients to make informed decisions about their health. Through innovation and collaboration, we are determined to transform the healthcare landscape into one that is patient-centric, equitable, and humane.</p>
+        </div>
       </div>
 
-
-      <h1 className='mt-32 ml-10 text-8xl font-semibold'>Our Vision</h1>
-      <hr></hr>
-      <div className='mt-4 ml-10 w-22 text-xl'>
-        <p>Welcome to Find Your Hospital, your trusted platform for reliable, up-to-date healthcare information tailored to your needs. In today's fast-paced world, navigating the healthcare system can be challenging, especially during critical moments when time is of the essence. We are here to bridge the gap between patients and essential healthcare services, ensuring you have quick and easy access to the resources that matter. </p>
-        <br></br>
-        <p>We understand that healthcare is not just about finding the right place—it's about finding it at the right time. That's why our platform is continuously updated with accurate and real-time data, giving you peace of mind when you need it most. We are committed to providing a user-friendly experience, ensuring that even in the most stressful situations, you can quickly find the information you need.</p>
+      <div>
+        <h1 className='mt-32 ml-10 text-8xl font-semibold text-center pt-4'>Our Vision</h1>
+        <div className='mt-12 ml-96 mr-96 pb-10 pt-4 w-auto text-xl text-center'>
+          <p>At Manushi, our vision is to become a global leader in healthcare technology by creating solutions that simplify the patient experience and optimize hospital workflows. We envision a future where healthcare is driven by technology that enables hospitals to operate more efficiently, reduces patient wait times, and provides instant access to critical services. We aspire to create a seamless connection between patients and healthcare providers, where resources are utilized effectively and care is delivered when it’s needed the most.</p>
+          <br></br>
+          <p>We are working toward a future where no one is left waiting for medical attention due to inefficiencies or lack of information. Our goal is to create a healthcare ecosystem that prioritizes accessibility, quality, and care for every individual, regardless of their location or circumstances. With technology at the forefront, we aim to redefine what it means to deliver healthcare in the 21st century.</p>
+        </div>
       </div>
-    </div>
+    </motion.div>
     </>
 
   );
