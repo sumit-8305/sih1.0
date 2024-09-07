@@ -54,13 +54,13 @@ const Landing = () => {
           backgroundSize: 'contain',
           height: 'auto',
         }}
-      ><div className='flex md:flex-row flex-col gap-52'>
-          <div>
-            <h1 className='mt-32 md:mt-96 md:ml-28 ml-2 text-8xl text-gray-900 font-semibold'>Manushi</h1>
-            <h1 className='mt-22 md:mt-0  float-right ml-2 font-semibold text-gray-900 text-3xl'>By Us, For Us</h1>
-          </div>
-          {/* <img className='mt-48 mr-32 md:scale-150 scale-100 rounded-full border-b-2 border-gray-900' src="/images/group_doctors-removebg-preview.jpg"></img> */}
-        </div>
+      >   <div className="relative h-screen bg-cover bg-center" style={{backgroundImage: "url('bg.jpeg')"}}>
+      <div className="absolute inset-0 bg-black opacity-30"></div>
+      <div className="relative z-10 flex flex-col justify-center items-start h-full px-4 md:px-16">
+        <h1 className="text-6xl md:text-8xl text-white font-semibold mb-4">Manushi</h1>
+        <h2 className="text-2xl md:text-3xl text-white font-semibold self-end">By Us, For Us</h2>
+      </div>
+    </div>
 
         <div className='bg-[#e5e7eb]'>
           <Features />
