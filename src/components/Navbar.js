@@ -15,7 +15,7 @@ function Navbar() {
         <nav className='w-full h-12 md:h-16 shadow-2xl border-black/30 border border-t-0 bg-white/30 backdrop-blur-xl text-black fixed top-0 z-50'>
             <div className='container mx-auto px-4'>
                 <div className='flex justify-between items-center h-12 md:h-16'>
-                    <div className='text-xl font-bold'>मानुषी</div>
+                    <div className='text-xl font-bold'><Link to="/">मानुषी</Link></div>
                     
                     {/* Hamburger menu for mobile */}
                     <div className='md:hidden'>
@@ -28,7 +28,6 @@ function Navbar() {
 
                     {/* Desktop menu */}
                     <ul className='hidden md:flex justify-center gap-6 text-md font-semibold'>
-                        <li className='hover:text-[#FC5F2B]'><Link to="/">Home</Link></li>
                         <li className='hover:text-[#FC5F2B]'><Link to="/bedStatus">Real Time Bed Status</Link></li>
                         <li className="relative">
                             <button onClick={toggleOPDDropdown} className="flex items-center hover:text-[#FC5F2B]">
