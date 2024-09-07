@@ -63,6 +63,10 @@ export const getHospitalByUniqueId = async (uniqueId) => {
   }
 };
 
+export const deleteInventoryItem = async (itemId) => {
+  const response = await axios.delete(`http://localhost:5000/api/inventory/items/${itemId}`);
+  return response.data;
+};
 
 export const getInventory = async (hospitalId) => {
   const response = await axios.get(`http://localhost:5000/api/inventory/items/${hospitalId}`);

@@ -22,7 +22,6 @@ exports.getItems = async (req, res) => {
   }
 };
 
-
 exports.addItem = async (req, res) => {
   try {
     const { hospitalId } = req.params;
@@ -33,6 +32,23 @@ exports.addItem = async (req, res) => {
     res.json(newItem);
   } catch (error) {
     console.error('Error adding inventory item:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// New deleteItem function
+exports.deleteItem = async (req, res) => {
+  try {
+    const { itemId } = req.params;
+
+    const deletedItem = await Inventory.findByIdAndDelete(itemId);
+    if (!deletedItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+
+    res.json({ message: 'Item deleted successfully', item: deletedItem });
+  } catch (error) {
+    console.error('Error deleting inventory item:', error);
     res.status(500).json({ message: 'Server error' });
   }
 };

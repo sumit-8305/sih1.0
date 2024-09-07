@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { getInventory, updateInventory, getHospitalByUniqueId } from '../services/api'; 
+import { getInventory, updateInventory, deleteInventoryItem, getHospitalByUniqueId } from '../services/api'; 
 
 const Inventory = ({ uniqueId, hospitalName }) => {
   const [inventory, setInventory] = useState([]);
   const [newItem, setNewItem] = useState('');
   const [quantity, setQuantity] = useState(0);
   const [error, setError] = useState(null);
-  const [hospitalId, setHospitalId] = useState(localStorage.getItem('hospitalId') || null); // Default to localStorage value
+  const [hospitalId, setHospitalId] = useState(localStorage.getItem('hospitalId') || null);
 
   // Fetch Hospital ID only if it's not in localStorage
   const fetchHospitalId = async () => {
@@ -14,7 +14,7 @@ const Inventory = ({ uniqueId, hospitalName }) => {
       try {
         const hospitalData = await getHospitalByUniqueId(uniqueId);
         setHospitalId(hospitalData._id); 
-        localStorage.setItem('hospitalId', hospitalData._id); // Store the hospitalId in localStorage
+        localStorage.setItem('hospitalId', hospitalData._id);
       } catch (error) {
         console.error('Error fetching hospital ID:', error);
         setError('Error fetching hospital ID: ' + (error.response?.data?.message || error.message));
@@ -60,6 +60,16 @@ const Inventory = ({ uniqueId, hospitalName }) => {
     }
   };
 
+  const handleDeleteItem = async (itemId) => {
+    try {
+      await deleteInventoryItem(itemId);
+      setInventory(inventory.filter(item => item._id !== itemId)); // Update the inventory state after deletion
+    } catch (error) {
+      console.error('Error deleting inventory item:', error);
+      setError('Error deleting inventory item: ' + (error.response?.data?.message || error.message));
+    }
+  };
+
   return (
     <div style={styles.container}>
       <h3>Inventory Management for {hospitalName}</h3>
@@ -91,6 +101,7 @@ const Inventory = ({ uniqueId, hospitalName }) => {
           <tr style={styles.headerRow}>
             <th style={styles.headerCell}>Item</th>
             <th style={styles.headerCell}>Quantity</th>
+            <th style={styles.headerCell}>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -98,6 +109,14 @@ const Inventory = ({ uniqueId, hospitalName }) => {
             <tr key={item._id} style={styles.dataRow}>
               <td style={styles.dataCell}>{item.name}</td>
               <td style={styles.dataCell}>{item.quantity}</td>
+              <td style={styles.dataCell}>
+                <button
+                  style={styles.deleteButton}
+                  onClick={() => handleDeleteItem(item._id)}
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -137,6 +156,14 @@ const styles = {
     cursor: 'pointer',
     flex: '0 0 auto',
   },
+  deleteButton: {
+    padding: '5px 10px',
+    background: '#e74c3c',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+  },
   table: {
     width: '100%',
     borderCollapse: 'collapse',
@@ -155,15 +182,6 @@ const styles = {
   dataCell: {
     padding: '10px',
     border: '1px solid #ddd',
-  },
-  '@media (max-width: 600px)': {
-    inputContainer: {
-      flexDirection: 'column',
-    },
-    input: {
-      width: '100%',
-      marginBottom: '10px',
-    },
   },
 };
 

@@ -15,6 +15,12 @@ router.post('/items/:hospitalId', (req, res, next) => {
   next();
 }, inventoryController.addItem);
 
+router.delete('/items/:itemId', (req, res, next) => {
+  console.log('DELETE /items/:itemId');
+  console.log('Item ID:', req.params.itemId);
+  next();
+}, inventoryController.deleteItem);
+
 
 
 module.exports = router;
