@@ -24,7 +24,7 @@ const Features = () => {
   return (
     <div className='mt-48 bg-[#e5e7eb]'>
       <div>
-        <h1 className='text-4xl flex justify-center'>
+        <h1 className='text-4xl flex justify-center text-center' >
           The most complete picture of your health you’ve ever had
         </h1>
       <Card />
