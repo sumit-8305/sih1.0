@@ -7,6 +7,7 @@ import ButtonUp from './ButtonUp';
 import Features from './Features';
 import Bars from './Bars';
 import Parallax from './Parallax';
+import Spline from '@splinetool/react-spline';
 
 const Landing = () => {
   const lines = [
@@ -193,6 +194,14 @@ const Landing = () => {
 
           </div>
         </div>
+      </div>
+      <div>
+
+
+
+        <Spline scene="https://prod.spline.design/cALiqpjuPIjuBwc7/scene.splinecode" />
+
+
       </div>
       <div className='mt-52'>
         <div className='flex justify-center text-center'>
