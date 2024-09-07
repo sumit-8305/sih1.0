@@ -1,194 +1,205 @@
 import React from "react";
 import styled from "styled-components";
 
-const Grid5x2 = () => {
+const Card = () => {
   return (
     <StyledWrapper>
-      <div className="grid md:grid-cols-5 grid-cols-2 justify-center gap-6 p-12 ml-8">
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
+      <div className="grid md:grid-cols-2 grid-cols-1 justify-center gap-32 p-12 ml-8">
+        <div className="card">
+          <div className="card-content">
+            <div className="card-top">
+              <span className="card-title">01.</span>
+              <p>Lightning.</p>
+            </div>
+            <div className="card-bottom">
+              <p>Hover Me?</p>
+              <svg
+                width="32"
+                viewBox="0 -960 960 960"
+                height="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-414q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-668q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Z" />
+              </svg>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
-            </div>
+          <div className="card-image">
+            <svg
+              width="48"
+              viewBox="0 -960 960 960"
+              height="48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="m393-165 279-335H492l36-286-253 366h154l-36 255Zm-73 85 40-280H160l360-520h80l-40 320h240L400-80h-80Zm153-395Z" />
+            </svg>
           </div>
         </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
+        <div className="card">
+          <div className="card-content">
+            <div className="card-top">
+              <span className="card-title">01.</span>
+              <p>Lightning.</p>
+            </div>
+            <div className="card-bottom">
+              <p>Hover Me?</p>
+              <svg
+                width="32"
+                viewBox="0 -960 960 960"
+                height="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-414q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-668q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Z" />
+              </svg>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
-            </div>
+          <div className="card-image">
+            <svg
+              width="48"
+              viewBox="0 -960 960 960"
+              height="48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="m393-165 279-335H492l36-286-253 366h154l-36 255Zm-73 85 40-280H160l360-520h80l-40 320h240L400-80h-80Zm153-395Z" />
+            </svg>
           </div>
         </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
+        <div className="card">
+          <div className="card-content">
+            <div className="card-top">
+              <span className="card-title">01.</span>
+              <p>Lightning.</p>
+            </div>
+            <div className="card-bottom">
+              <p>Hover Me?</p>
+              <svg
+                width="32"
+                viewBox="0 -960 960 960"
+                height="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-414q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-668q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Z" />
+              </svg>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
-            </div>
+          <div className="card-image">
+            <svg
+              width="48"
+              viewBox="0 -960 960 960"
+              height="48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="m393-165 279-335H492l36-286-253 366h154l-36 255Zm-73 85 40-280H160l360-520h80l-40 320h240L400-80h-80Zm153-395Z" />
+            </svg>
           </div>
         </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
+        <div className="card">
+          <div className="card-content">
+            <div className="card-top">
+              <span className="card-title">01.</span>
+              <p>Lightning.</p>
+            </div>
+            <div className="card-bottom">
+              <p>Hover Me?</p>
+              <svg
+                width="32"
+                viewBox="0 -960 960 960"
+                height="32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-414q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19ZM226-668q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 0q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Z" />
+              </svg>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
-            </div>
+          <div className="card-image">
+            <svg
+              width="48"
+              viewBox="0 -960 960 960"
+              height="48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="m393-165 279-335H492l36-286-253 366h154l-36 255Zm-73 85 40-280H160l360-520h80l-40 320h240L400-80h-80Zm153-395Z" />
+            </svg>
           </div>
         </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
-            </div>
-          </div>
         </div>
-        <div className="container">
-          <div className="box">
-            <span className="title">GLASS EFFECT</span>
-            <div>
-              <strong>JOE WATSON SBF</strong>
-              <p>0000 000 000 0000</p>
-              <span>VALID</span> <span>01/28</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
-  .container {
+  .card {
+  width: 320px;
+  background: #fff480;
   color: black;
   position: relative;
-  font-family: sans-serif;
+  border-radius: 2.5em;
+  padding: 2em;
+  transition: transform 0.4s ease;
 }
 
-.container::before,
-.container::after {
-  content: "";
-  background-color: #fab5704c;
-  position: absolute;
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5em;
+  height: 100%;
+  transition: transform 0.4s ease;
 }
 
-.container::before {
-  border-radius: 50%;
-  width: 6rem;
-  height: 6rem;
-  top: 30%;
-  right: 7%;
-}
-
-.container::after {
-  content: "";
-  position: absolute;
-  height: 3rem;
-  top: 8%;
-  right: 5%;
-  border: 1px solid;
-}
-
-.container .box {
-  width: 11.875em;
-  height: 15.875em;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.074);
-  border: 1px solid rgba(0, 0, 0, 0.222);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border-radius: 0.7rem;
-  transition: all ease 0.3s;
-}
-
-.container .box {
+.card .card-top, .card .card-bottom {
+  display: flex;
   justify-content: space-between;
 }
 
-.container .box .title {
-  font-size: 2rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-}
-
-.container .box div strong {
-  margin-bottom: 0.5rem;
-}
-
-.container .box div p {
+.card .card-top p, .card .card-top .card-title, .card .card-bottom p, .card .card-bottom .card-title {
   margin: 0;
-  font-size: 0.9em;
-  font-weight: 300;
-  letter-spacing: 0.1em;
 }
 
-.container .box div span {
-  font-size: 0.7rem;
-  font-weight: 300;
+.card .card-title {
+  font-weight: bold;
 }
 
-.container .box div span:nth-child(3) {
-  font-weight: 500;
-  margin-right: 0.2rem;
+.card .card-top p, .card .card-bottom p {
+  font-weight: 600;
 }
 
-.container .box:hover {
-  box-shadow: 0px 0px 20px 1px #ffbb763f;
-  border: 1px solid rgba(255, 255, 255, 0.454);
+.card .card-bottom {
+  align-items: flex-end;
 }
 
+.card .card-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.card .card-image svg {
+  width: 4em;
+  height: 4em;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(0.97);
+}
+
+.card:hover .card-content {
+  transform: scale(0.96);
+}
+
+.card:hover .card-image svg {
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.9);
+}
 `;
 
-export default Grid5x2;
+export default Card;

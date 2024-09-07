@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
@@ -31,7 +32,9 @@ const NavItems = ({ to, text, onClick }) => (
 );
 
 const SearchForm = () => {
+
   const [isExpanded, setIsExpanded] = useState(false);
+
 
   return (
     <motion.div
@@ -72,33 +75,53 @@ const SearchForm = () => {
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY >= window.innerHeight) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div>
       <nav className='w-full h-20 shadow-2xl border-black/30 border border-t-0 bg-transparent backdrop-blur-xl text-black fixed top-0 z-50'>
         <div className='container mx-auto px-4 h-full'>
           <div className='flex justify-between items-center h-full'>
-            <motion.div 
+            <motion.div
               className='text-3xl font-bold'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              style={{color:'grey'}}
+              style={{ color: 'grey' }}
             >
               <Link to="/">manushi</Link>
             </motion.div>
 
             {/* Desktop menu */}
-            <ul className='hidden lg:flex justify-right gap-8 text-sm font-medium'>
+            <ul className='hidden lg:flex justify-right gap-8 text-sm font-medium ' style={{
+              color: scrolled ? 'black' : 'white',
+              transition: 'background-color 0.3s'
+            }}>
               <div className="mt-1 "><NavItem to="/bedStatus" text="Real Time Bed Status" /></div>
               <div className="mt-1"><NavItem to="/opd" text="OPD" /></div>
               <div className="mt-1"><NavItem to="/docs" text="Documentation" /></div>
               <div className="mt-1"><NavItem to="/login" text="Login" /></div>
               <div className='bg-[#f65f2b] pl-4 pr-4 pt-1 pb-1 text-white rounded-sm '>
-                  <NavItems to="/contact" text="Join Us" />
+                <NavItems to="/contact" text="Join Us" />
               </div>
             </ul>
 
-            
+
 
             {/* Hamburger menu for mobile and tablet */}
             <div className='lg:hidden'>
@@ -141,5 +164,4 @@ function Navbar() {
     </div>
   );
 }
-
 export default Navbar;

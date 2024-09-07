@@ -54,13 +54,14 @@ const Landing = () => {
           backgroundSize: 'contain',
           height: 'auto',
         }}
-      >   <div className="relative h-screen bg-cover bg-center" style={{backgroundImage: "url('bg.jpeg')"}}>
-      <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="relative z-10 flex flex-col justify-center items-start h-full px-4 md:px-16">
-        <h1 className="text-6xl md:text-8xl text-white font-semibold mb-4">Manushi</h1>
-        <h2 className="text-2xl md:text-3xl text-white font-semibold self-end">By Us, For Us</h2>
-      </div>
-    </div>
+      >
+        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('bg.png')" }}>
+          <div className="absolute inset-0 bg-black opacity-30"></div>
+          {/* <div className="relative z-10 flex flex-col justify-center text-center  h-full px-4 md:px-16">
+            <h1 className="text-5xl md:text-6xl text-center  text-white font-semibold ">Manushi<br/></h1>
+            <h2 className="text-xl md:text-2xl text-white font-semibold ">By Us, For Us</h2>
+          </div> */}
+        </div>
 
         <div className='bg-[#e5e7eb]'>
           <Features />
@@ -90,9 +91,9 @@ const Landing = () => {
           <div>
             <div className='mt-12 border-2 bg-[#e5e7eb] mt-72 pb-28'>
 
-              <div className=" gap-4 p-4">
+              <div className="grid md:grid-cols-2 grid-cols-1 justify-center gap-6 p-12 ml-8 ">
 
-                <Grid5x2/>
+                <Grid5x2 />
 
 
               </div>
@@ -102,8 +103,8 @@ const Landing = () => {
 
       </div>
 
-      
-      
+
+
 
       {/* new section */}
       <div className='mt-56'>
@@ -158,7 +159,7 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      
+
       <div className='mt-52'>
         <div className='flex justify-center text-center'>
           <h1 className='text-6xl '>For people who want more</h1>
@@ -184,7 +185,7 @@ const Landing = () => {
         </div>
       </div>
 
-      
+
 
 
       {/* category */}
@@ -214,9 +215,9 @@ const Landing = () => {
       </div> */}
 
       <section>
-<video autoPlay loop playsInline muted>
-        <source src="Videos/Video.mp4" type='video/mp4'/>
-      </video>
+        <video autoPlay loop playsInline muted>
+          <source src="Videos/Video.mp4" type='video/mp4' />
+        </video>
       </section>
       <Footer />
     </>
