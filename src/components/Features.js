@@ -7,15 +7,15 @@ const Features = () => {
   const renderContent = () => {
     switch (activeSection) {
       case 1:
-        return <p className='text-[#18181b]'>This is the content for Section 1.</p>;
+        return <p className='text-2xl font-semibold  text-[#7f7f7f] justify-center text-center '>Combining whole-city wide leading Hospitals and <br/> delievering services at critical moments.</p>;
       case 2:
-        return <p className='text-[#18181b]'>This is the content for Section 2.</p>;
+        return <p className='text-2xl font-semibold  text-[#7f7f7f] justify-center text-center '> Offering Realtime bed status , Inventory Management <br/>  OCD Queuing and much more .</p>;
       case 3:
-        return <p className='text-[#18181b]'>This is the content for Section 3.</p>;
+        return <p className='text-2xl font-semibold  text-[#7f7f7f] justify-center text-center '> It enhances coordination among hospitals,<br/> reducing mortality rates.</p>;
       case 4:
-        return <p className='text-[#18181b]'>This is the content for Section 4.</p>;
+        return <p className='text-2xl font-semibold  text-[#7f7f7f] justify-center text-center '>Fetching data directly from hospitals and <br/> delivering it to those in need.</p>;
       case 5:
-        return <p className='text-[#18181b]'>This is the content for Section 5.</p>;
+        return <p className='text-2xl font-semibold  text-[#7f7f7f] justify-center text-center '>Collaborating with Top hospitals and helping them <br/> to enhance patient care.</p>;
       default:
         return null;
     }
@@ -32,34 +32,34 @@ const Features = () => {
       <div className="container mx-auto p-4 bg-[#e5e7eb] ">
         <div className="flex justify-center gap-0">
           <button
-            className={`p-2 rounded-lg ${activeSection === 1 ? ' bg-[#ff5e7e]' : 'bg-gray-200'} transition-all duration-500`}
+            className={` font-semibold p-2 rounded-lg ${activeSection === 1 ? ' bg-[#ff5e7e]' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(1)}
           >
-            Section 1
+            🏠︎ About
           </button>
           <button
-            className={`p-2 rounded-lg ${activeSection === 2 ? 'bg-[#fc5f2b]' : 'bg-gray-200'} transition-all duration-500`}
+            className={`font-semibold p-2 rounded-lg ${activeSection === 2 ? 'bg-[#fc5f2b]' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(2)}
           >
-            Section 2
+            ❖ Services
           </button>
           <button
-            className={`p-2 rounded-lg ${activeSection === 3 ? 'bg-[#11c182]' : 'bg-gray-200'} transition-all duration-500`}
+            className={` font-semibold p-2 rounded-lg ${activeSection === 3 ? 'bg-[#11c182]' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(3)}
           >
-            Section 3
+            ☑ Action Plan
           </button>
           <button
-            className={`p-2 rounded-lg ${activeSection === 4 ? 'bg-[#f7861e]' : 'bg-gray-200'} transition-all duration-500`}
+            className={` font-semibold p-2 rounded-lg ${activeSection === 4 ? 'bg-[#f7861e]' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(4)}
           >
-            Section 4
+            📊 Data
           </button>
           <button
-            className={`p-2 rounded-lg ${activeSection === 5 ? 'bg-[#3f3f46]' : 'bg-gray-200'} transition-all duration-500`}
+            className={` font-semibold p-2 rounded-lg ${activeSection === 5 ? 'bg-[#3f3f46]' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(5)}
           >
-            Section 5
+            🏥 Hospitals
           </button>
         </div>
 
