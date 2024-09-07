@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Tiles from './Tiles';
 import Footer from './Footer';
 import ButtonUp from './ButtonUp';
@@ -7,6 +9,40 @@ import Bars from './Bars';
 import Parallax from './Parallax';
 
 const Landing = () => {
+  const lines = [
+    "We believe that if you improve your health, you can improve",
+    "every other aspect of your life.",
+    "",
+    "But mainstream medicine hasn’t helped many of us do that. It",
+    "ignores red flags, reacts too late, and misses the full picture.",
+    "",
+    "Our vision of the future is a completely different way of looking",
+    "at health. A system where proactive health is the norm. Where",
+    "it’s easy to slow aging and prevent disease. Where our food and",
+    "environments are default healthy and toxin free. Where",
+    "everyone is able to reach their peak potential.",
+    "",
+    "It’s time to unleash your inner Superpower."
+  ];
+
+  // Intersection observer to trigger animation when visible
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Animate only once
+    threshold: 0.1, // Start animation when 10% is in view
+  });
+
+  // Variants for the animation of each line
+  const lineVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.3, // Delay each line by 0.3s
+      },
+    }),
+  };
+
   return (
     <>
       <div
@@ -51,7 +87,7 @@ const Landing = () => {
           </div>
           <div>
             <div className='mt-12 border-2 bg-[#e5e7eb] mt-72 pb-28'>
-              
+
               <div className="grid md:grid-cols-5 grid-cols-2 gap-4 p-4">
 
                 <div className="bg-gray-200 p-4 rounded shadow">
@@ -94,7 +130,7 @@ const Landing = () => {
                   <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
                   <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
                 </div>
-                
+
 
               </div>
             </div>
@@ -103,7 +139,7 @@ const Landing = () => {
 
       </div>
 
-      
+
 
       {/* new section */}
       <div className='mt-56'>
@@ -122,35 +158,35 @@ const Landing = () => {
 
           <div className="grid md:grid-cols-2 grid-cols-1 gap-6 p-12">
 
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded shadow">
+            <div className="bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
               <h1 className='ml-20 text-2xl'>Arielle Zuckerberg</h1>
               <p className='ml-20 text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
             </div>
@@ -158,10 +194,34 @@ const Landing = () => {
           </div>
         </div>
       </div>
+      <div className='mt-52'>
+        <div className='flex justify-center text-center'>
+          <h1 className='text-6xl '>For people who want more</h1>
+        </div>
+        <div className='flex justify-center text-center mt-44 mb-36'>
+          <motion.h1
+            className='text-xl'
+            ref={ref} // To track when this section comes into view
+          >
+            {lines.map((line, i) => (
+              <motion.div
+                key={i}
+                custom={i}
+                variants={lineVariants}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
+                className='block' // Keep lines in block style
+              >
+                {line === "" ? <br /> : line} {/* Add <br/> for empty lines */}
+              </motion.div>
+            ))}
+          </motion.h1>
+        </div>
+      </div>
 
 
       {/* category */}
-      <div className='m-8 flex flex-col md:flex-row justify-center md:gap-8 gap-4 text-black font-medium items-center ' style={{ marginTop: "150px" }}>
+      {/* <div className='m-8 flex flex-col md:flex-row justify-center md:gap-8 gap-4 text-black font-medium items-center ' style={{ marginTop: "150px" }}>
         <button className='w-full md:w-1/4 px-4 py-3 rounded-full text-xl text-center border-2 border-black transform hover:scale-110 duration-200 ease-in-out' style={{ background: '#47E28E' }}>
           General
         </button>
@@ -176,15 +236,15 @@ const Landing = () => {
       </div>
 
       <Tiles />
-      <ButtonUp />
+      <ButtonUp /> */}
       {/* About */}
-      <div className='bg-[#e5e7eb] text-black mt-24 mb-25 p-5'>
+      {/* <div className='bg-[#e5e7eb] text-black mt-24 mb-25 p-5'>
         <h1 className='text-4xl font-bold m-5 text-center md:text-left'>About</h1>
 
         <p className='m-5 text-lg md:text-xl leading-relaxed'>
           Welcome to Find Your Hospital, your go-to platform for reliable and up-to-date healthcare information. We are committed to bridging the gap between patients and essential healthcare services, ensuring that you have access to critical resources when you need them the most. At Find Your Hospital, our mission is to empower individuals with the information they need to make informed healthcare decisions. Whether you're searching for available hospital beds, nearby medicine dispensaries, or the closest medical facilities, our platform is designed to provide you with accurate and timely data.
         </p>
-      </div>
+      </div> */}
 
       <Footer />
     </>
