@@ -11,9 +11,19 @@ const menuVariants = {
 const linkVariants = {
   hover: { scale: 1.05, color: '#FC5F2B', transition: { duration: 0.2 } },
 };
+const linkVariantz = {
+  hover: { scale: 1.05, color: '#000000', transition: { duration: 0.2 } },
+};
 
 const NavItem = ({ to, text, onClick }) => (
   <motion.li whileHover="hover" variants={linkVariants}>
+    <Link to={to} onClick={onClick} className="block py-1">
+      {text}
+    </Link>
+  </motion.li>
+);
+const NavItems = ({ to, text, onClick }) => (
+  <motion.li whileHover="hover" variants={linkVariantz}>
     <Link to={to} onClick={onClick} className="block py-1">
       {text}
     </Link>
@@ -78,18 +88,17 @@ function Navbar() {
             </motion.div>
 
             {/* Desktop menu */}
-            <ul className='hidden lg:flex justify-center gap-8 text-sm font-medium'>
-              <NavItem to="/bedStatus" text="Real Time Bed Status" />
-              <NavItem to="/opd" text="OPD" />
-              <NavItem to="/docs" text="Documentation" />
-              <NavItem to="/contact" text="Contact" />
-              <NavItem to="/login" text="Login" />
+            <ul className='hidden lg:flex justify-right gap-8 text-sm font-medium'>
+              <div className="mt-1"><NavItem to="/bedStatus" text="Real Time Bed Status" /></div>
+              <div className="mt-1"><NavItem to="/opd" text="OPD" /></div>
+              <div className="mt-1"><NavItem to="/docs" text="Documentation" /></div>
+              <div className="mt-1"><NavItem to="/login" text="Login" /></div>
+              <div className='bg-[#f65f2b] pl-4 pr-4 pt-1 pb-1 text-white rounded-sm '>
+                  <NavItems to="/contact" text="Join Us" />
+              </div>
             </ul>
 
-            {/* Search form */}
-            <div className="hidden lg:block">
-              <SearchForm />
-            </div>
+            
 
             {/* Hamburger menu for mobile and tablet */}
             <div className='lg:hidden'>

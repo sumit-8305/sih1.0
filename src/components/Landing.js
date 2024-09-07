@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Tiles from './Tiles';
+// import Tiles from './Tiles';
 import Footer from './Footer';
-import ButtonUp from './ButtonUp';
+// import ButtonUp from './ButtonUp';
 import Features from './Features';
 import Bars from './Bars';
 import Parallax from './Parallax';

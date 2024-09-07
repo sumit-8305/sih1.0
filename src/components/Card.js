@@ -33,11 +33,11 @@ const Card = () => {
                         <div className="tracker tr-24" />
                         <div className="tracker tr-25" />
                         <div id="card">
-                            <p id="prompt">HOVER OVER :D</p>
-                            <div className="title">
-                                look mom,
-                                <br />
-                                no JS
+                            <p id="prompt">Manushi</p>
+                            <p className="prompt2 text-md font-semibold text-white">Hover Here!</p>
+                            <div className="title sm:text-base flex justify-center text-center">
+                                
+                            Explore real-time queuing models in OPDs,<br/> track bed availability, and streamline admissions<br/> to ensure efficient healthcare delivery<br/> across the facility."
                             </div>
                         </div>
                     </div>
@@ -121,6 +121,9 @@ const StyledWrapper = styled.div`
 }
 
 .tracker:hover ~ #card #prompt {
+  opacity: 0;
+}
+.tracker:hover ~ #card .prompt2 {
   opacity: 0;
 }
 
