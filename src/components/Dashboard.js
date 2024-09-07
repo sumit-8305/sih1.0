@@ -140,7 +140,7 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
             </p>
           </div>
         )}
-
+        <Inventory  uniqueId={uniqueId} hospitalName={hospitalName} />
         <h3
           style={{
             padding: '5px 20px',
@@ -155,7 +155,7 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
             textAlign: 'center',
           }}
         >
-        <Inventory  uniqueId={uniqueId} hospitalName={hospitalName} />
+        
           All Hospitals
         </h3>
 

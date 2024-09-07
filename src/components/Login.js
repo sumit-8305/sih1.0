@@ -10,17 +10,24 @@ const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await login(username, password); // Assuming the login function returns user data
-    sessionStorage.setItem('isLoggedIn', true);
-    sessionStorage.setItem('hospitalName', response.hospitalName); // Store hospital name
-    sessionStorage.setItem('uniqueId', uniqueId); // Store unique ID
-    setUniqueId(uniqueId);
+    // Send login request with username, password, and uniqueId
+    const response = await login(username, password, uniqueId);
+
+    // Store login-related data in localStorage
+    localStorage.setItem('token', response.token);  // Store JWT token
+    localStorage.setItem('hospitalId', response.hospitalId);  // Store hospitalId
+    localStorage.setItem('hospitalName', response.hospitalName);  // Store hospitalName
+
+    // Set the state accordingly
+    setUniqueId(uniqueId);  // Use the value entered by the user
     setHospitalName(response.hospitalName);
     setIsLoggedIn(true);
   } catch (error) {
+    console.error("Login error:", error.response?.data?.message || error.message);
     setError('Invalid credentials. Please try again.');
   }
 };
+
 
 
   return (

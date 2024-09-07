@@ -11,20 +11,29 @@ const setAuthToken = (token) => {
   }
 };
 
-// Login function
-export const login = async (username, password) => {
+// Updated login function in api.js
+export const login = async (username, password, uniqueId) => {
   try {
-    const response = await axios.post(`${API_URL}/auth/login`, { username, password });
+    // Send POST request with username, password, and uniqueId
+    const response = await axios.post(`${API_URL}/auth/login`, {
+      username,
+      password,
+      uniqueId,
+    });
+
+    // If login is successful, store the token and return the response data
     if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
-      setAuthToken(response.data.token);
+      localStorage.setItem('token', response.data.token);  // Save token to localStorage
+      setAuthToken(response.data.token);  // Set the auth token for future requests
     }
+
     return response.data;
   } catch (error) {
     console.error("Login error:", error.response?.data?.message || error.message);
     throw error;
   }
 };
+
 
 // Update bed availability
 export const updateBedAvailability = async (availableBeds) => {
@@ -44,24 +53,22 @@ export const addMaintainer = async (hospitalId, username, password) => {
   return response.data;
 };
 
-// Get inventory for a specific hospital
-export const getInventory = async (uniqueId) => {
+
+export const getHospitalByUniqueId = async (uniqueId) => {
   try {
-    const response = await axios.get(`${API_URL}/inventory/items/${uniqueId}`);
+    const response = await axios.get(`http://localhost:5000/api/hospital/unique/${uniqueId}`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching inventory:', error);
     throw error;
   }
 };
 
-// Update inventory (Add new item)
-export const updateInventory = async (uniqueId, item) => {
-  try {
-    const response = await axios.post(`${API_URL}/inventory/items/${uniqueId}`, item);
-    return response.data;
-  } catch (error) {
-    console.error('Error adding inventory item:', error);
-    throw error;
-  }
+
+export const getInventory = async (hospitalId) => {
+  const response = await axios.get(`http://localhost:5000/api/inventory/items/${hospitalId}`);
+  return response.data;
+};
+
+export const updateInventory = async (hospitalId, newItem) => {
+  await axios.post(`http://localhost:5000/api/inventory/items/${hospitalId}`, newItem);
 };
