@@ -26,7 +26,7 @@ function aboutUs() {
       }}
     className='mt-28 mb-5'>
       <div>
-        <h1 className='mt-32 text-xl text-center'><u>Manushi Innovations</u></h1>
+        <h1 className='mt-32 text-xl text-center' id='Manushiinnovations'><u>Manushi Innovations</u></h1>
         <h1 className=' ml-10 text-8xl font-semibold text-center pt-10'>About Us</h1>
         <div className='mt-12 ml-96 mr-96 pb-10 pt-4 w-auto text-xl text-center'>
           <p>Welcome to Manushi, your trusted platform for reliable, up-to-date healthcare information tailored to your needs. In today's fast-paced world, navigating the healthcare system can be challenging, especially during critical moments when time is of the essence. We are here to bridge the gap between patients and essential healthcare services, ensuring you have quick and easy access to the resources that matter. </p>

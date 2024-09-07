@@ -38,7 +38,7 @@ const Contact = () => {
         }}
       >
         <div className="text-4xl font-normal mb-6 flex items-center justify-center text-black">
-          Contact Us
+          Join Us
         </div>
 
         <form ref={form} onSubmit={sendEmail} className="space-y-4">

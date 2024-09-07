@@ -89,7 +89,7 @@ function Navbar() {
 
             {/* Desktop menu */}
             <ul className='hidden lg:flex justify-right gap-8 text-sm font-medium'>
-              <div className="mt-1"><NavItem to="/bedStatus" text="Real Time Bed Status" /></div>
+              <div className="mt-1 "><NavItem to="/bedStatus" text="Real Time Bed Status" /></div>
               <div className="mt-1"><NavItem to="/opd" text="OPD" /></div>
               <div className="mt-1"><NavItem to="/docs" text="Documentation" /></div>
               <div className="mt-1"><NavItem to="/login" text="Login" /></div>
