@@ -33,7 +33,6 @@ const handleSubmit = async (e) => {
   return (
     <div
       style={{
-        background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='768' height='696' viewBox='0 0 768 696' fill='none'%3E%3Cpath d='M70.4613 131C1.66127 92.2 -13.5387 -63 10.9613 -115H912.461L968.461 689C905.128 698.167 756.261 705 667.461 659C556.461 601.5 555.854 563.797 525.961 498.5C493 426.5 442.5 380.5 339 380.5C269.457 380.5 226.182 313.365 206.961 260C160.5 131 156.461 179.5 70.4613 131Z' fill='%23D1F4FC'/%3E%3C/svg%3E") no-repeat right top`,
         backgroundSize: 'cover',
         height: '100vh',
         display: 'flex',
@@ -43,15 +42,15 @@ const handleSubmit = async (e) => {
       }}
     >
       <div
-        className="backdrop-blur-md bg-white/60 shadow-xl rounded-xl p-8 max-w-md w-full"
+        className="backdrop-blur-md bg-white/60  rounded-xl p-8 max-w-md w-full"
         style={{
           backdropFilter: 'blur(10px)',
           backgroundColor: 'rgba(255, 255, 255, 0.6)',
         }}
       >
-        <div className="text-4xl font-bold mb-6 flex items-center justify-center text-black">
-          
+        <div className="text-5xl font-normal mb-20 flex flex-col items-center justify-center text-black">
           Login
+          <h5 className='text-sm text-zinc-600 mt-2'>Log in to your workspace</h5>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -62,7 +61,7 @@ const handleSubmit = async (e) => {
             onChange={(e) => setUniqueIdState(e.target.value)}
             placeholder="Hospital Unique ID"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 transition-all bg-transparent text-black placeholder-gray-600"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg transition-all bg-transparent text-black placeholder-gray-600"
           />
           <input
             type="text"
@@ -70,7 +69,7 @@ const handleSubmit = async (e) => {
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 transition-all bg-transparent text-black placeholder-gray-600"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg transition-all bg-transparent text-black placeholder-gray-600"
           />
           <input
             type="password"
@@ -78,15 +77,15 @@ const handleSubmit = async (e) => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 transition-all bg-transparent text-black placeholder-gray-600"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg transition-all bg-transparent text-black placeholder-gray-600"
           />
           <div className="flex justify-end">
-            <button className="text-blue-600 hover:underline">Forgot Password?</button>
+            <button className="mb-8 hover:underline text-black active:scale-95">Forgot Password?</button>
           </div>
           <button
             type="submit"
-            className="w-full py-2 text-white rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 hover:bg-blue-600"
-            style={{ backgroundColor: '#005792' }}
+            className="w-full py-2 text-white rounded-lg transition-all bg-gradient-to-r from-orange-400 via-orange-600 to-red-500"
+          
           >
             Login
           </button>

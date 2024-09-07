@@ -66,7 +66,7 @@ const Landing = () => {
           <Features />
         </div>
 
-        <div className='mt-48'>
+        <div className='mt-48 '>
           <h3 className='text-2xl flex justify-center'>How it works</h3>
           <h3 className='text-6xl flex justify-center text-center mt-2'>An all-in-one health<br /> membership, for people<br /> who want more</h3>
           <Bars />
