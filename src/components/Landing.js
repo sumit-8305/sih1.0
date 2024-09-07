@@ -7,7 +7,8 @@ import ButtonUp from './ButtonUp';
 import Features from './Features';
 import Bars from './Bars';
 import Parallax from './Parallax';
-import Spline from '@splinetool/react-spline';
+import Grid5x2 from './Grid5x2';
+
 
 const Landing = () => {
   const lines = [
@@ -89,48 +90,9 @@ const Landing = () => {
           <div>
             <div className='mt-12 border-2 bg-[#e5e7eb] mt-72 pb-28'>
 
-              <div className="grid md:grid-cols-5 grid-cols-2 gap-4 p-4">
+              <div className=" gap-4 p-4">
 
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
-                <div className="bg-gray-200 p-4 rounded shadow">
-                  <h1 className=' text-2xl'>Arielle Zuckerberg</h1>
-                  <p className=' text-sm'>Partner at Long Journey Ventures, formerly Coatue</p>
-                </div>
+                <Grid5x2/>
 
 
               </div>
@@ -196,14 +158,7 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      <div>
-
-
-
-        <Spline scene="https://prod.spline.design/cALiqpjuPIjuBwc7/scene.splinecode" />
-
-
-      </div>
+      
       <div className='mt-52'>
         <div className='flex justify-center text-center'>
           <h1 className='text-6xl '>For people who want more</h1>
