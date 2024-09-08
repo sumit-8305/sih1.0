@@ -11,6 +11,7 @@ const menuVariants = {
 const linkVariants = {
   hover: { scale: 1.05, color: '#FC5F2B', transition: { duration: 0.2 } },
 };
+
 const linkVariantz = {
   hover: { scale: 1.05, color: '#000000', transition: { duration: 0.2 } },
 };
@@ -50,14 +51,14 @@ function Navbar() {
   return (
     <div>
       <nav className={`w-full h-20 shadow-lg fixed top-0 z-50 ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'} transition-colors duration-300`}>
-        <div className="container mx-auto px-4 h-full flex justify-between items-center">
+        <div className="container px-5 h-full flex justify-between items-center max-w-[calc(100%-20px)] lg:max-w-full">
           {/* Logo */}
           <motion.div className="text-4xl font-bold" whileHover={{ scale: 1.05 }}>
             <Link to="/" style={{ color: scrolled ? 'black' : 'grey' }}>manushi</Link>
           </motion.div>
 
           {/* Desktop menu */}
-          <ul className="hidden lg:flex gap-8 text-sm font-medium">
+          <ul className="hidden lg:flex gap-8 text-sm font-medium ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'} transition-colors duration-300">
             <NavItem to="/bedStatus" text="Real Time Bed Status" />
             <NavItem to="/opd" text="OPD" />
             <NavItem to="/docs" text="Documentation" />
@@ -84,7 +85,7 @@ function Navbar() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="lg:hidden absolute top-20 left-1/4 transform -translate-x-1/2 w-11/12 max-w-md bg-white bg-opacity-40 backdrop-blur-lg shadow-lg rounded-lg z-50"
+              className="lg:hidden absolute top-20 left-1/4 transform -translate-x-1/2 w-[calc(100%-40px)] max-w-md bg-white bg-opacity-40 backdrop-blur-lg shadow-lg rounded-lg z-50"
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -96,9 +97,9 @@ function Navbar() {
                 <NavItem to="/opd" text="OPD" onClick={() => setIsMenuOpen(false)} />
                 <NavItem to="/docs" text="Documentation" onClick={() => setIsMenuOpen(false)} />
                 <NavItem to="/login" text="Login" onClick={() => setIsMenuOpen(false)} />
-                            <div className="bg-[#f65f2b] px-4 py-1 text-white rounded-sm">
-              <NavItems to="/contact" text="Join Us" />
-            </div>
+                <div className="bg-[#f65f2b] px-4 py-1 text-white rounded-sm">
+                  <NavItems to="/contact" text="Join Us" />
+                </div>
               </ul>
             </motion.div>
           )}

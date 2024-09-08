@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import Licensing from './components/Documentation/Licensing';
 import PrivacyPolicy from './components/Documentation/PrivacyPolicy';
 import PrivateRoute from './components/PrivateRoute'; // Import PrivateRoute
+import OPDRequest from './components/OPD';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -72,6 +73,7 @@ useEffect(() => {
           <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
           <Route path="/licensing" element={<Licensing />} />
           <Route path="/docs" element={<DocumentationPage />} />
+          <Route path='/opd' element={<OPDRequest />} />
         </Routes>
       </div>
     </Router>
