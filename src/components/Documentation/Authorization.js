@@ -9,7 +9,7 @@ const Authentication = () => {
           </p>
           <br />
           
-          <h2 style={{fontSize:"25px", color:'#005792'}}>Authorization Mechanism</h2>
+          <h2 style={{fontSize:"25px", color:'#FC5F2B', fontWeight:'bold'}}>Authorization Mechanism</h2>
           <ol>
             <li style={{fontWeight:"bold"}}>1. User Roles:</li>
               <p style={{textIndent: "20px"}}><a style={{fontWeight:"bold"}}>Maintainers:</a> Hospital staff responsible for updating bed availability. Each maintainer can only access and manage data for their own hospital.</p>
@@ -17,7 +17,7 @@ const Authentication = () => {
               <p style={{textIndent: "20px"}}><a style={{fontWeight:"bold"}}>Login:</a> Maintainers authenticate by providing a username and password.</p>
               <p style={{textIndent: "20px"}}><a style={{fontWeight:"bold"}}>Token-Based:</a> Upon successful login, users receive a JSON Web Token (JWT) which must be included in the header of requests to authenticate and authorize access.</p>
           </ol>
-          <h2 style={{fontSize:"25px", color:'#005792'}}>Authorization Process:</h2>
+          <h2 style={{fontSize:"25px", color:'#FC5F2B', fontWeight:'bold'}}>Authorization Process:</h2>
             <ol>
               <li style={{fontWeight:"bold"}}>1. User Registration:</li>
                 <p style={{textIndent: "20px"}}>Admins register new hospitals and assign them unique IDs.</p>

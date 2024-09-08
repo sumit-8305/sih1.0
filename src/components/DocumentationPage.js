@@ -9,7 +9,7 @@ import Examples from './Documentation/Examples';
 
 function DocumentationPage() {
   return (
-    <div className="documentation-container" style={{background:'#D1F4FA',color:'#005792'}}>
+    <div className="documentation-container" style={{marginTop:"50px", background:'#ffffff',color:'#000000'}}>
       <DocumentationNav />
       <div style={{display:'flex', flexDirection:'column',width:'100vw',height:'auto'}}>
           <Introduction />

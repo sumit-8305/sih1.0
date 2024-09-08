@@ -75,7 +75,7 @@ const Landing = () => {
           height: 'auto',
         }}
       >
-        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('sumitmanushix.jpeg')" }}>
+        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('bg.png')" }}>
           <div className="absolute inset-0 bg-black opacity-30"></div>
           {/* <div className="relative z-10 flex flex-col justify-center text-center  h-full px-4 md:px-16">
             <h1 className="text-5xl md:text-6xl text-center  text-white font-semibold ">Manushi<br/></h1>
@@ -131,7 +131,7 @@ const Landing = () => {
           </div>
           <div className='flex justify-center'>
             <h3 className=' inline text-base mt-2'>
-              Designed to enhance all aspects of your health, We care!
+            Crafted to improve every facet of your health, We care!
             </h3>
           </div>
           <div>
@@ -143,7 +143,7 @@ const Landing = () => {
 
                   <div className="grid md:grid-cols-2 grid-cols-1 gap-6 p-12">
 
-                    <div className=" flex justify-center bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
+                    <div className=" flex justify-center bg-gray-200 p-4 rounded shadow-md border-t-2 border-b-2">
                       <svg
                         className='mt-4 mr-8'
                         width="20"
@@ -160,12 +160,12 @@ const Landing = () => {
                       </svg>
                       <div>
                         <h1 className=' text-2xl'>Safe</h1>
-                        <p className=' text-md'>Using latest Encryption technique to Secure data. </p>
+                        <p className=' text-md'>Using latest Encryption technique to Secure data.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                       </div>
                     </div>
-                    <div className=" flex justify-center bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
+                    <div className=" flex justify-center bg-gray-200 p-4 rounded shadow-md border-t-2 border-b-2">
                       <svg
-                        className='mt-4 mr-8'
+                        className='mt-4 mr-9 -ml-10'
                         width="20"
                         viewBox="0 0 48 48"
                         xmlns="http://www.w3.org/2000/svg"
@@ -179,9 +179,9 @@ const Landing = () => {
                         <p className=' text-md'>Using Real-time data , we provide accurate results.</p>
                       </div>
                     </div>
-                    <div className="flex justify-center align-center bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
+                    <div className="flex justify-center align-center bg-gray-200 p-4 rounded shadow-md border-t-2 border-b-2">
                       <svg
-                        className='mt-4 mr-2'
+                        className='mt-4 mr-9 -ml-10'
                         width="20"
                         viewBox="0 0 16 16"
                         height="20"
@@ -189,14 +189,14 @@ const Landing = () => {
                       >
                         <path d="M3 14H1L1 2H3L8 7L8 2H10L16 8L10 14H8L8 9L3 14Z" />
                       </svg>
-                      <div className='ml-4'>
+                      <div>
                         <h1 className=' text-2xl'>Quick</h1>
                         <p className=' text-md'>Using Real-time data processing to reduce delays.</p>
                       </div>
                     </div>
-                    <div className="flex justify-center align-center bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
+                    <div className="flex justify-center align-center bg-gray-200 p-4 rounded shadow-md border-t-2 border-b-2">
                       <svg
-                        className='mt-4 mr-8'
+                        className='mt-4 mr-9 -ml-36'
                         width="20"
                         viewBox="0 0 48 48"
                         height="20"
@@ -213,9 +213,9 @@ const Landing = () => {
                         <p className='text-md'>Providing on a wide range of devices.</p>
                       </div>
                     </div>
-                    <div className="flex justify-center item-start bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
+                    <div className="flex justify-center item-start bg-gray-200 p-4 rounded shadow-md border-t-2 border-b-2">
                       <svg
-                        className='mt-4 mr-20'
+                        className='mt-4 mr-9 -ml-36'
                         width="20"
                         viewBox="0 0 64 64"
                         height="20"
@@ -243,9 +243,9 @@ const Landing = () => {
                         <p className='text-md'>Collaborating with city-wide hospitals.</p>
                       </div>
                     </div>
-                    <div className="flex justify-center align-center bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
+                    <div className="flex justify-center align-center bg-gray-200 p-4 rounded shadow-md border-t-2 border-b-2">
                       <svg
-                        className='mt-4 mr-20'
+                        className='mt-4 mr-9 -ml-20'
                         width="20"
                         viewBox="0 0 493.656 493.656"
                         height="20"
@@ -282,13 +282,8 @@ const Landing = () => {
                         <p className=' text-md'>Assisting hospitals to manage their Inventory.</p>
                       </div>
                     </div>
-
-
                   </div>
                 </div>
-
-
-
               </div>
             </div>
           </div>
@@ -324,8 +319,6 @@ const Landing = () => {
 
 
       </div>
-
-      <Tiles />
 
       <div className='mt-52'>
           <AnimatedTextSection />

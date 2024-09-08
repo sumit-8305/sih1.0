@@ -12,7 +12,7 @@ const Footer = () => {
                     </a>
                     <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                         <li>
-                            <Link to="/aboutUs/#Manushiinnovations" class="hover:underline me-4 md:me-6">About</Link>
+                            <Link to="/docs" class="hover:underline me-4 md:me-6">Documents</Link>
                         </li>
                         <li>
                             <Link to="/privacyPolicy" class="hover:underline me-4 md:me-6">Privacy Policy</Link>

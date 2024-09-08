@@ -13,7 +13,7 @@ function DocumentationNav() {
   return (
     <div className="documentation-container">
       <nav className="sidebar">
-        <h3>Manushi Api Docs</h3>
+        <h3><br></br></h3>
         <ul>
           <li><Link to="/docs"><a href="/docs/#intro" onClick={(e) => smoothScroll(e, 'intro')}>Introduction</a></Link></li>
           <li>
@@ -24,7 +24,6 @@ function DocumentationNav() {
           </li>
           <li><a href="/docs/#api" onClick={(e) => smoothScroll(e, 'api')}>API Reference</a></li>
           <li><a href="/docs/#example" onClick={(e) => smoothScroll(e, 'example')}>Examples</a></li>
-          <li><Link to="/aboutUs" style={{color:'#005792'}}>About Us</Link></li>
         </ul>
       </nav>
 

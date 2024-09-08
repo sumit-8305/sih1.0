@@ -23,12 +23,12 @@ const Parallax = () => {
                 <span value="-8" className='bottom-10 right-56 z-10'><img src={ParaImg} /></span>
                 <span value="12" className='top-52 right-96 z-10'><img src={ParaImg} /></span>
                 <div className='left-50 z-20 mr-40'>
-                    <h2 className='heading flex justify-center text-center align-center text-5xl '>Get exclusive <br />access to our <br />marketplace</h2>
-                    <h2 className='heading flex justify-center text-center align-center !text-base mt-2'>Unlimited tools to transform your health and change your life.      </h2>
+                    <h2 className='heading flex justify-center text-center align-center text-5xl '>Revolutionizing<br/>Healthcare</h2>
+                    <h2 className='heading flex justify-center text-center align-center !text-base mt-2'>Healthcare transformed with cutting-edge technology for unparalleled results and outcomes.</h2>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Parallax
+export default Parallax;

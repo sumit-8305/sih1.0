@@ -11,10 +11,10 @@ function Introduction() {
             Welcome to the Manushi API Documentation. This documentation provides all the details needed to interact with the API efficiently.
           </p>
           <div style={{display:'flex', flexDirection:"row"}}>
-          <p><a href='/' target=' ' style={{fontWeight: "bold"}}>मानुषी/Manushi</a> is a web-based platform designed to provide real-time information on outpatient department (OPD) bed availability and Queuing Facility across multiple hospitals. Here’s a detailed explanation of how Manushi works: </p>
+          <p><a href='/' target=' ' style={{fontWeight: "bold"}}>Manushi</a> is a web-based platform designed to provide real-time information on outpatient department (OPD) bed availability and Queuing Facility across multiple hospitals. Here’s a detailed explanation of how Manushi works: </p>
           </div>
           <br />
-          <h2 style={{fontSize:"25px", color:'#005792'}}>Key Features and Functions of Manushi</h2>
+          <h2 style={{fontSize:"25px", color:'#FC5F2B', fontWeight:'bold'}}>Key Features and Functions of Manushi</h2>
           <ol>
             <li style={{fontWeight:"bold"}}>1. Real-Time Bed Availability:</li>
               <p style={{textIndent: "20px"}}>Manushi displays current OPD bed availability for various hospitals. This helps patients and hospital staff quickly determine available resources.</p>
