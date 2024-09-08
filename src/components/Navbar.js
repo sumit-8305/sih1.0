@@ -50,7 +50,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className={`w-full h-20 shadow-lg fixed top-0 z-50 ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'} transition-colors duration-300`}>
+      <nav className={`w-full h-20 fixed top-0 z-50 ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'} transition-colors duration-300`}>
         <div className="container px-5 h-full flex justify-between items-center max-w-[calc(100%-20px)] lg:max-w-full">
           {/* Logo */}
           <motion.div className="text-4xl font-bold" whileHover={{ scale: 1.05 }}>

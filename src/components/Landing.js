@@ -12,6 +12,9 @@ import AnimatedTextSection from './AnimatedText';
 
 
 const Landing = () => {
+  const threeLines = ["An all-in-one health", "membership, for people", "who want more"];
+  const twoLines = ["Finally, healthcare that", "looks at the whole you"];
+  const oneLine = ["Backed", "by", "the", "best"];
   const lines = [
     "We believe that if you improve your health, you can improve",
     "every other aspect of your life.",
@@ -27,6 +30,22 @@ const Landing = () => {
     "",
     "It’s time to unleash your inner Superpower."
   ];
+
+  const lineDelay = {
+    initial: {
+      color:"#FC5F2B",
+      opacity:0,
+      y:20,
+    },
+    animate: (index)=>({
+      color:"#000000",
+      y:0,
+      opacity:100,
+      transition:{
+        delay: 0.4 * index,  
+      },
+    }),
+  }
 
   // Intersection observer to trigger animation when visible
   const [ref, inView] = useInView({
@@ -70,7 +89,21 @@ const Landing = () => {
 
         <div className='mt-48 '>
           <h3 className='text-2xl flex justify-center'>How it works</h3>
-          <h3 className='text-6xl flex justify-center text-center mt-2'>An all-in-one health<br /> membership, for people<br /> who want more</h3>
+          <div className='text-6xl flex justify-center text-center mt-2'>
+            <ul>
+              {threeLines.map((line,index)=>(
+                <motion.li
+                key={index}
+                variants={lineDelay}
+                initial="initial"
+                whileInView="animate"
+                custom={index}
+                >
+                  {line}
+                </motion.li>
+              ))} 
+            </ul>
+          </div>
           <Bars />
         </div>
 
@@ -80,9 +113,21 @@ const Landing = () => {
 
         <div className='mt-44'>
           <div className='flex justify-center text-center'>
-            <h2 className='inline text-6xl mt-2'>
-              Finally, healthcare that <br />looks at the whole you
-            </h2>
+            <div className='inline text-6xl mt-2'>
+            <ul>
+                {twoLines.map((line,index)=>(
+                  <motion.li
+                  key={index}
+                  variants={lineDelay}
+                  initial="initial"
+                  whileInView="animate"
+                  custom={index}
+                  >
+                    {line}
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div className='flex justify-center'>
             <h3 className=' inline text-base mt-2'>
@@ -257,9 +302,19 @@ const Landing = () => {
       {/* new section */}
       <div className='mt-56'>
         <div className='flex justify-center text-center'>
-          <h1 className='text-6xl'>
-            Backed by the best
-          </h1>
+        <div className='text-6xl flex flex-row gap-4'>
+            {oneLine.map((word,index)=>(
+              <motion.p
+              key={index}
+              variants={lineDelay}
+              initial="initial"
+              whileInView="animate"
+              custom={index}
+              >
+                {word}
+              </motion.p>
+            ))}
+          </div>
         </div>
         <div className='flex justify-center text-center mt-4'>
           <h1 className='text-base'>
