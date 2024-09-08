@@ -71,7 +71,7 @@ const location = useLocation(); // Get the current route
           </motion.div>
 
           {/* Desktop menu */}
-          <ul className={`hidden lg:flex gap-8 text-sm font-medium ${NavSet ?(scrolled? 'bg-transparent text-black' : 'text-white bg-transparent'):'bg-white text-black'} transition-colors duration-300`}>
+          <ul className={`hidden lg:flex gap-8 text-sm font-medium ${NavSet ?(scrolled? 'bg-transparent text-black' : 'text-white bg-transparent'):' text-black'} transition-colors duration-300`}>
             <NavItem to="/bedStatus" text="Real Time Bed Status" />
             <NavItem to="/opd" text="OPD" />
             <NavItem to="/docs" text="Documentation" />
