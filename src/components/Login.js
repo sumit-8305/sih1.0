@@ -1,32 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { login } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [uniqueId, setUniqueIdState] = useState('');
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    // Send login request with username, password, and uniqueId
-    const response = await login(username, password, uniqueId);
+  useEffect(() => {
+    // Check if user is already logged in
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsLoggedIn(true);
+      setHospitalName(localStorage.getItem('hospitalName'));
+      setUniqueId(localStorage.getItem('uniqueId'));
+    }
+  }, [setIsLoggedIn, setHospitalName, setUniqueId]);
 
-    // Store login-related data in localStorage
-    localStorage.setItem('token', response.token);  // Store JWT token
-    localStorage.setItem('hospitalId', response.hospitalId);  // Store hospitalId
-    localStorage.setItem('hospitalName', response.hospitalName);  // Store hospitalName
-
-    // Set the state accordingly
-    setUniqueId(uniqueId);  // Use the value entered by the user
-    setHospitalName(response.hospitalName);
-    setIsLoggedIn(true);
-  } catch (error) {
-    console.error("Login error:", error.response?.data?.message || error.message);
-    setError('Invalid credentials. Please try again.');
-  }
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await login(username, password, uniqueId);
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('hospitalId', response.hospitalId);
+      localStorage.setItem('hospitalName', response.hospitalName);
+      localStorage.setItem('uniqueId', uniqueId);
+      setUniqueId(uniqueId);
+      setHospitalName(response.hospitalName);
+      setIsLoggedIn(true);
+      navigate('/dashboard'); // Redirect to dashboard after login
+    } catch (error) {
+      console.error("Login error:", error.response?.data?.message || error.message);
+      setError('Invalid credentials. Please try again.');
+    }
+  };
 
 
 
@@ -83,12 +92,12 @@ const handleSubmit = async (e) => {
             <button className="mb-8 hover:underline text-black active:scale-95">Forgot Password?</button>
           </div>
           <button
-            type="submit"
-            className="w-full py-2 text-white rounded-lg transition-all bg-gradient-to-r from-orange-400 via-orange-600 to-red-500"
-          
-          >
-            Login
-          </button>
+          type="submit"
+          className="w-full py-2 text-white rounded-lg transition-all bg-gradient-to-r from-orange-400 via-orange-600 to-red-500"
+        >
+          Login
+        </button>
+        
         </form>
       </div>
     </div>

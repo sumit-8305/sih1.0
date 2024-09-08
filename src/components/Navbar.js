@@ -74,7 +74,7 @@ const location = useLocation(); // Get the current route
           <ul className={`hidden lg:flex gap-8 text-sm font-medium ${NavSet ?(scrolled? 'bg-transparent text-black' : 'text-white bg-transparent'):' text-black'} transition-colors duration-300`}>
             <NavItem to="/bedStatus" text="Real Time Bed Status" />
             <NavItem to="/opd" text="OPD" />
-            <NavItem to="/docs" text="Documentation" />
+            <NavItem to="/aboutUS" text="About" />
             <NavItem to="/login" text="Login" />
             <div className="bg-[#f65f2b] px-4 py-1 text-white rounded-sm">
               <NavItems to="/contact" text="Join Us" />

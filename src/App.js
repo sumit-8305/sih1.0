@@ -60,14 +60,15 @@ useEffect(() => {
             } 
           />
           <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
-            <Route path="/inventory" element={<Inventory />} />
             <Route path="/dashboard" element={
               <Dashboard
                 setHospitalName={setHospitalName}
                 uniqueId={uniqueId}
               />
             } />
+            <Route path="/inventory" element={<Inventory />} />
           </Route>
+          
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacyPolicy" element={<PrivacyPolicy />} />

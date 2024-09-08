@@ -256,14 +256,22 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
   );
 };
 
+
 const AdminPanel = () => {
   const [requests, setRequests] = useState([]);
 
   useEffect(() => {
     const fetchRequests = async () => {
-      const response = await fetch('http://localhost:5000/api/opd/requests');
-      const data = await response.json();
-      setRequests(data);
+      try {
+        const response = await fetch('http://localhost:5000/api/opd/requests');
+        if (!response.ok) {
+          throw new Error('Failed to fetch requests');
+        }
+        const data = await response.json();
+        setRequests(data);
+      } catch (error) {
+        console.error('Error fetching requests:', error);
+      }
     };
 
     fetchRequests();
@@ -276,30 +284,115 @@ const AdminPanel = () => {
       });
 
       if (response.ok) {
+        setRequests((prevRequests) => prevRequests.filter(request => request._id !== id));
         alert('Request approved');
-        setRequests(requests.filter(request => request._id !== id));
       } else {
-        alert('Error approving request');
+        throw new Error('Error approving request');
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Something went wrong');
+      console.error('Approval Error:', error);
+      alert('Failed to approve the request');
     }
   };
 
   return (
-    <div className="admin-panel">
-      <h2>Pending OPD Requests</h2>
-      <ul>
-        {requests.map((request) => (
-          <li key={request._id}>
-            {request.patientName} requested a bed at {request.hospital} 
-            <button onClick={() => approveRequest(request._id)}>Approve</button>
-          </li>
-        ))}
-      </ul>
+    <div style={styles.container}>
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Pending OPD Requests</h2>
+      {requests.length > 0 ? (
+        <div style={styles.inputContainer}>
+        <ul style={styles.table}>
+          {requests.map((request) => (
+            <thead>
+            <tr style={styles.headerRow}>
+            <th
+              key={request._id}
+              style={styles.headerCell}
+            >
+              <div>
+                <strong>{request.patientName}</strong> requested a bed at <strong>{request.hospital}</strong>
+              </div>
+
+            </th>
+            <th style={styles.headerCell}>
+              <button
+                onClick={() => approveRequest(request._id)}
+                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-all"
+              >
+                Approve
+              </button>
+            </th>
+            </tr>
+            </thead>
+          ))}
+        </ul>
+        </div>
+      ) : (
+        <p className="text-gray-500">No pending requests.</p>
+      )}
     </div>
   );
 };
 
+const styles = {
+  container: {
+    padding: '20px',
+    background: '#f9f9f9',
+    borderRadius: '5px',
+    marginBottom: '20px',
+    maxWidth: '100%',
+    boxSizing: 'border-box',
+  },
+  inputContainer: {
+    marginBottom: '20px',
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '10px',
+  },
+  input: {
+    flex: '1 1 auto',
+    minWidth: '150px',
+    padding: '10px',
+    borderRadius: '4px',
+    border: '1px solid #ccc',
+  },
+  button: {
+    padding: '10px 15px',
+    background: '#4CAF50',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    flex: '0 0 auto',
+  },
+  deleteButton: {
+    padding: '5px 10px',
+    background: '#e74c3c',
+    color: 'white',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+  },
+  table: {
+    width: '100%',
+    borderCollapse: 'collapse',
+  },
+  headerRow: {
+    background: '#f2f2f2',
+  },
+  headerCell: {
+    padding: '10px',
+    border: '1px solid #ddd',
+    textAlign: 'left',
+  },
+  dataRow: {
+    backgroundColor: 'white',
+  },
+  dataCell: {
+    padding: '10px',
+    border: '1px solid #ddd',
+  },
+};
+
+
 export default Dashboard;
+
