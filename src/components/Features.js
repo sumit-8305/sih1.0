@@ -66,7 +66,9 @@ const Features = () => {
         <div className="content flex justify-center p-4 rounded-lg ">
           {renderContent()}
         </div>
-      </div>
+      </div>  <section>
+
+  </section>
     </div>
   );
 };

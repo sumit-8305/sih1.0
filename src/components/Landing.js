@@ -8,6 +8,7 @@ import Features from './Features';
 import Bars from './Bars';
 import Parallax from './Parallax';
 import Grid5x2 from './Grid5x2';
+import AnimatedTextSection from './AnimatedText';
 
 
 const Landing = () => {
@@ -272,28 +273,8 @@ const Landing = () => {
       <Tiles />
 
       <div className='mt-52'>
-        <div className='flex justify-center text-center'>
-          <h1 className='text-6xl '>For people who want more</h1>
-        </div>
-        <div className='flex justify-center text-center mt-44 mb-36'>
-          <motion.h1
-            className='text-xl'
-            ref={ref} // To track when this section comes into view
-          >
-            {lines.map((line, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                variants={lineVariants}
-                initial="hidden"
-                animate={inView ? 'visible' : 'hidden'}
-                className='block' // Keep lines in block style
-              >
-                {line === "" ? <br /> : line} {/* Add <br/> for empty lines */}
-              </motion.div>
-            ))}
-          </motion.h1>
-        </div>
+          <AnimatedTextSection />
+        
       </div>
 
 
@@ -324,12 +305,11 @@ const Landing = () => {
           Welcome to Find Your Hospital, your go-to platform for reliable and up-to-date healthcare information. We are committed to bridging the gap between patients and essential healthcare services, ensuring that you have access to critical resources when you need them the most. At Find Your Hospital, our mission is to empower individuals with the information they need to make informed healthcare decisions. Whether you're searching for available hospital beds, nearby medicine dispensaries, or the closest medical facilities, our platform is designed to provide you with accurate and timely data.
         </p>
       </div> */}
-
-      <section>
+      <div class="video-container">
         <video autoPlay loop playsInline muted>
-          <source src="Videos/Video.mp4" type='video/mp4' />
+          <source src="Videos/croppedVideo.mp4" type='video/mp4' />
         </video>
-      </section>
+      </div>
       <Footer />
     </>
   )
