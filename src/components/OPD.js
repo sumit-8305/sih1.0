@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import BedStatus from './BedStatus'
 
 const OPDRequest = () => {
   const [formData, setFormData] = useState({
@@ -76,8 +75,8 @@ const handleSubmit = async (e) => {
               required
             >
               <option value="">Select a Hospital</option>
-              <option value="Hospital A">Hospital A</option>
-              <option value="Hospital B">Hospital B</option>
+              <option value="Max-vaishali">Max-vaishali</option>
+              <option value="kailash">kailash</option>
             </select>
           </div>
           <button

@@ -8,20 +8,6 @@ const Inventory = ({ uniqueId, hospitalName }) => {
   const [error, setError] = useState(null);
   const [hospitalId, setHospitalId] = useState(localStorage.getItem('hospitalId') || null);
 
-  // Fetch Hospital ID only if it's not in localStorage
-  const fetchHospitalId = async () => {
-    if (!hospitalId) {
-      try {
-        const hospitalData = await getHospitalByUniqueId(uniqueId);
-        setHospitalId(hospitalData._id); 
-        localStorage.setItem('hospitalId', hospitalData._id);
-      } catch (error) {
-        console.error('Error fetching hospital ID:', error);
-        setError('Error fetching hospital ID: ' + (error.response?.data?.message || error.message));
-      }
-    }
-  };
-
   const fetchInventory = async () => {
     if (!hospitalId) {
       setError('Invalid hospital ID.');
@@ -29,6 +15,7 @@ const Inventory = ({ uniqueId, hospitalName }) => {
     }
     try {
       const data = await getInventory(hospitalId);
+      // Assuming the API now returns only the inventory for this hospital
       setInventory(data);
     } catch (error) {
       console.error('Error fetching inventory:', error);
@@ -38,6 +25,16 @@ const Inventory = ({ uniqueId, hospitalName }) => {
 
   useEffect(() => {
     if (!hospitalId && uniqueId) {
+      const fetchHospitalId = async () => {
+        try {
+          const hospitalData = await getHospitalByUniqueId(uniqueId);
+          setHospitalId(hospitalData._id); 
+          localStorage.setItem('hospitalId', hospitalData._id);
+        } catch (error) {
+          console.error('Error fetching hospital ID:', error);
+          setError('Error fetching hospital ID: ' + (error.response?.data?.message || error.message));
+        }
+      };
       fetchHospitalId();
     } else if (hospitalId) {
       fetchInventory();
@@ -63,12 +60,13 @@ const Inventory = ({ uniqueId, hospitalName }) => {
   const handleDeleteItem = async (itemId) => {
     try {
       await deleteInventoryItem(itemId);
-      setInventory(inventory.filter(item => item._id !== itemId)); // Update the inventory state after deletion
+      setInventory(inventory.filter(item => item._id !== itemId));
     } catch (error) {
       console.error('Error deleting inventory item:', error);
       setError('Error deleting inventory item: ' + (error.response?.data?.message || error.message));
     }
   };
+
 
   return (
     <div style={styles.container}>

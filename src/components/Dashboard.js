@@ -57,18 +57,6 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
     }
   };
 
-  const getBedAvailabilityColor = (availableBeds) => {
-    if (availableBeds < 5) return 'red';
-    if (availableBeds >= 5 && availableBeds <= 20) return 'yellow';
-    return 'lightgreen';
-  };
-  
-  const getBedAvailabilityColortext = (availableBeds) => {
-    if (availableBeds < 5) return 'white';
-    if (availableBeds >= 5 && availableBeds <= 20) return 'black';
-    return 'black';
-  };
-
   return (
     <div>
       <NavbarAdm />
@@ -141,141 +129,36 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
           </div>
         )}
         <Inventory  uniqueId={uniqueId} hospitalName={hospitalName} />
-        <AdminPanel />
-        <h3
-          style={{
-            padding: '5px 20px',
-            background: 'white',
-            margin: '10px 0',
-            color: 'black',
-            border: '1px solid black',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontSize: '16px',
-            width: '20%',
-            textAlign: 'center',
-          }}
-        >
-        
-          All Hospitals
-        </h3>
-
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <table style={{
-            padding: '5px 20px',
-            background: '#D1F4FA',
-            margin: '10px 0',
-            color: 'black',
-            border: '1px solid black',
-            borderRadius: '5px',
-            fontSize: '16px',
-            borderCollapse: 'collapse',
-          }}>
-            <thead>
-              <tr 
-                style={{
-                  background: '#D1F4FA',
-                  color: 'black',
-                  border: '1px solid black',
-                }}
-              >
-                <th
-                  style={{
-                    padding: '10px',
-                    border: '1px solid black',
-                    textAlign: 'center',
-                  }}
-                >
-                  Hospital Name
-                </th>
-                <th
-                  style={{
-                    padding: '10px',
-                    border: '1px solid black',
-                    textAlign: 'center',
-                  }}
-                >
-                  Available Beds
-                </th>
-                <th
-                  style={{
-                    padding: '10px',
-                    border: '1px solid black',
-                    textAlign: 'center',
-                  }}
-                >
-                  Total Beds
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {hospitals.map((hospital) => (
-                <tr key={hospital._id}
-                  style={{
-                    background: 'white',
-                    color: 'black',
-                    border: '1px solid black',
-                  }}
-                >
-                  <td
-                    style={{
-                      padding: '10px',
-                      border: '1px solid black',
-                      textAlign: 'center',
-                    }}
-                  >
-                    {hospital.name}
-                  </td>
-                  <td
-                    style={{
-                      padding: '10px',
-                      border: '1px solid black',
-                      textAlign: 'center',
-                      color: getBedAvailabilityColortext(hospital.availableBeds),
-                      backgroundColor: getBedAvailabilityColor(hospital.availableBeds), 
-                    }}
-                  >
-                    {hospital.availableBeds}
-                  </td>
-                  <td
-                    style={{
-                      padding: '10px',
-                      border: '1px solid black',
-                      textAlign: 'center',
-                    }}
-                  >
-                    {hospital.totalBeds}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <AdminPanel currentHospital={currentHospital} />
       </div>
     </div>
   );
 };
 
 
-const AdminPanel = () => {
+const AdminPanel = ({ currentHospital }) => {
   const [requests, setRequests] = useState([]);
 
   useEffect(() => {
     const fetchRequests = async () => {
+      if (!currentHospital) return;
+
       try {
         const response = await fetch('http://localhost:5000/api/opd/requests');
         if (!response.ok) {
           throw new Error('Failed to fetch requests');
         }
         const data = await response.json();
-        setRequests(data);
+        // Filter requests to only include those matching the current hospital
+        const filteredRequests = data.filter(request => request.hospital === currentHospital.name);
+        setRequests(filteredRequests);
       } catch (error) {
         console.error('Error fetching requests:', error);
       }
     };
 
     fetchRequests();
-  }, []);
+  }, [currentHospital]);
 
   const approveRequest = async (id) => {
     try {
@@ -300,34 +183,30 @@ const AdminPanel = () => {
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">Pending OPD Requests</h2>
       {requests.length > 0 ? (
         <div style={styles.inputContainer}>
-        <ul style={styles.table}>
-          {requests.map((request) => (
-            <thead>
-            <tr style={styles.headerRow}>
-            <th
-              key={request._id}
-              style={styles.headerCell}
-            >
-              <div>
-                <strong>{request.patientName}</strong> requested a bed at <strong>{request.hospital}</strong>
-              </div>
-
-            </th>
-            <th style={styles.headerCell}>
-              <button
-                onClick={() => approveRequest(request._id)}
-                className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-all"
-              >
-                Approve
-              </button>
-            </th>
-            </tr>
-            </thead>
-          ))}
-        </ul>
+          <ul style={styles.table}>
+            {requests.map((request) => (
+              <thead key={request._id}>
+                <tr style={styles.headerRow}>
+                  <th style={styles.headerCell}>
+                    <div>
+                      <strong>{request.patientName}</strong> requested a bed at <strong>{request.hospital}</strong>
+                    </div>
+                  </th>
+                  <th style={styles.headerCell}>
+                    <button
+                      onClick={() => approveRequest(request._id)}
+                      className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-all"
+                    >
+                      Approve
+                    </button>
+                  </th>
+                </tr>
+              </thead>
+            ))}
+          </ul>
         </div>
       ) : (
-        <p className="text-gray-500">No pending requests.</p>
+        <p className="text-gray-500">No pending requests for this hospital.</p>
       )}
     </div>
   );
