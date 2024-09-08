@@ -100,4 +100,5 @@ For AppImage:
 Simply delete the .AppImage file as no installation occurs.
 
 <hr />
+
 Thank you for installing Manushi! If you encounter any issues, feel free to open a ticket in the repository or contact us for support.
