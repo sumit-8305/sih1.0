@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 const menuVariants = {
   hidden: { opacity: 0, y: -20 },
@@ -35,22 +36,34 @@ const NavItems = ({ to, text, onClick }) => (
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [NavSet, setNavSet] = useState(false);
+const location = useLocation(); // Get the current route
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setScrolled(scrollY >= window.innerHeight);
-    };
+    if (location.pathname === '/') {  // Only on the homepage
+      setNavSet(true);
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        if (scrollY >= window.innerHeight) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    } else {
+      setScrolled(false);  // Ensure navbar style resets on other pages
+    }
+  }, [location]);
 
   return (
     <div>
-      <nav className={`w-full h-20 fixed top-0 z-50 ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'} transition-colors duration-300`}>
+      <nav className={`w-full h-20 fixed top-0 z-50 ${NavSet ?( scrolled ? 'bg-white text-black' : 'bg-transparent text-white') : 'bg-white text-black'} transition-colors duration-300`}>
         <div className="container px-5 h-full flex justify-between items-center max-w-[calc(100%-20px)] lg:max-w-full">
           {/* Logo */}
           <motion.div className="text-4xl font-bold" whileHover={{ scale: 1.05 }}>
@@ -58,7 +71,7 @@ function Navbar() {
           </motion.div>
 
           {/* Desktop menu */}
-          <ul className="hidden lg:flex gap-8 text-sm font-medium ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'} transition-colors duration-300">
+          <ul className={`hidden lg:flex gap-8 text-sm font-medium ${NavSet ?(scrolled? 'bg-transparent text-black' : 'text-white bg-transparent'):'bg-white text-black'} transition-colors duration-300`}>
             <NavItem to="/bedStatus" text="Real Time Bed Status" />
             <NavItem to="/opd" text="OPD" />
             <NavItem to="/docs" text="Documentation" />
