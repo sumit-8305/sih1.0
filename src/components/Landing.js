@@ -75,7 +75,7 @@ const Landing = () => {
           height: 'auto',
         }}
       >
-        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('bg.png')" }}>
+        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('sumitmanushix.jpeg')" }}>
           <div className="absolute inset-0 bg-black opacity-30"></div>
           {/* <div className="relative z-10 flex flex-col justify-center text-center  h-full px-4 md:px-16">
             <h1 className="text-5xl md:text-6xl text-center  text-white font-semibold ">Manushi<br/></h1>
