@@ -14,27 +14,29 @@ const OPDRequest = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/api/opd/request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('http://localhost:5000/api/opd/requests', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-      if (response.ok) {
-        alert('Request submitted successfully!');
-      } else {
-        alert('Error submitting request.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Something went wrong.');
+    if (response.ok) {
+      alert('Request submitted successfully!');
+    } else {
+      const errorData = await response.json(); // Capture response error details
+      alert(`Error: ${errorData.message || 'Error submitting request.'}`);
     }
-  };
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Something went wrong.');
+  }
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">

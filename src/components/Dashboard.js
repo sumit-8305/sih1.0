@@ -141,6 +141,7 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
           </div>
         )}
         <Inventory  uniqueId={uniqueId} hospitalName={hospitalName} />
+        <AdminPanel />
         <h3
           style={{
             padding: '5px 20px',
@@ -251,6 +252,52 @@ const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
           </table>
         </div>
       </div>
+    </div>
+  );
+};
+
+const AdminPanel = () => {
+  const [requests, setRequests] = useState([]);
+
+  useEffect(() => {
+    const fetchRequests = async () => {
+      const response = await fetch('http://localhost:5000/api/opd/requests');
+      const data = await response.json();
+      setRequests(data);
+    };
+
+    fetchRequests();
+  }, []);
+
+  const approveRequest = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/opd/approve/${id}`, {
+        method: 'POST',
+      });
+
+      if (response.ok) {
+        alert('Request approved');
+        setRequests(requests.filter(request => request._id !== id));
+      } else {
+        alert('Error approving request');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong');
+    }
+  };
+
+  return (
+    <div className="admin-panel">
+      <h2>Pending OPD Requests</h2>
+      <ul>
+        {requests.map((request) => (
+          <li key={request._id}>
+            {request.patientName} requested a bed at {request.hospital} 
+            <button onClick={() => approveRequest(request._id)}>Approve</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
