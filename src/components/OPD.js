@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BedStatus from './BedStatus'
 
 const OPDRequest = () => {
   const [formData, setFormData] = useState({
@@ -86,6 +87,7 @@ const handleSubmit = async (e) => {
             Submit Request
           </button>
         </form>
+        
       </div>
     </div>
   );
