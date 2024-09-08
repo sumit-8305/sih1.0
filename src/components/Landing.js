@@ -181,7 +181,7 @@ const Landing = () => {
                     </div>
                     <div className="flex justify-center align-center bg-gray-200 p-4 rounded shadow border-t-2 border-b-2">
                       <svg
-                        className='mt-4 mr-20'
+                        className='mt-4 mr-2'
                         width="20"
                         viewBox="0 0 16 16"
                         height="20"
@@ -189,7 +189,7 @@ const Landing = () => {
                       >
                         <path d="M3 14H1L1 2H3L8 7L8 2H10L16 8L10 14H8L8 9L3 14Z" />
                       </svg>
-                      <div>
+                      <div className='ml-4'>
                         <h1 className=' text-2xl'>Quick</h1>
                         <p className=' text-md'>Using Real-time data processing to reduce delays.</p>
                       </div>

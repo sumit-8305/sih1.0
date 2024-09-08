@@ -9,7 +9,7 @@ import DocumentationPage from './components/DocumentationPage';
 import AboutUs from './components/aboutUs';
 import BedStatus from './components/BedStatus';
 import Contact from './components/Contact';
-import Licensing from './components/Documentation/Licensing';
+import TermsAndConditions from './components/Documentation/TermAndCon';
 import PrivacyPolicy from './components/Documentation/PrivacyPolicy';
 import PrivateRoute from './components/PrivateRoute'; // Import PrivateRoute
 import OPDRequest from './components/OPD';
@@ -72,7 +72,7 @@ useEffect(() => {
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-          <Route path="/licensing" element={<Licensing />} />
+          <Route path="/termsandcondition" element={<TermsAndConditions/>} />
           <Route path="/docs" element={<DocumentationPage />} />
           <Route path='/opd' element={<OPDRequest />} />
         </Routes>
