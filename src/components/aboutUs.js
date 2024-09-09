@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import Footer from './Footer';
 
 
 const fadeIn = {
@@ -54,6 +55,7 @@ function aboutUs() {
         </div>
       </div>
     </motion.div>
+    <Footer />
     </>
 
   );

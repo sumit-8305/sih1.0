@@ -32,11 +32,11 @@ const Card = () => {
                         <div className="tracker tr-23" />
                         <div className="tracker tr-24" />
                         <div className="tracker tr-25" />
-                        <div id="card">
+                        <div id="card" className="bg-gradient-to-r from-orange-400 via-orange-600 to-red-500 shadow-[0_0_90px_#FC5F2B]">
                             <p id="prompt">Manushi</p>
-                            <p className="prompt2 text-md font-semibold text-white">Hover Here!</p>
+                            <p className="prompt2 text-md font-semibold text-white">Hover Here!</p> 
                             <div className="title sm:text-base flex justify-center text-center">
-                                
+                             
                             Explore real-time queuing models in OPDs,<br/> track bed availability, and streamline admissions<br/> to ensure efficient healthcare delivery<br/> across the facility."
                             </div>
                         </div>
@@ -72,7 +72,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   border-radius: 20px;
   transition: 700ms;
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+
 }
 
 .subtitle {
@@ -132,11 +132,6 @@ const StyledWrapper = styled.div`
   filter: brightness(1.1);
 }
 
-.container:hover #card::before {
-  transition: 200ms;
-  content: '';
-  opacity: 80%;
-}
 
 .canvas {
   perspective: 800px;
@@ -154,17 +149,6 @@ const StyledWrapper = styled.div`
     "tr-21 tr-22 tr-23 tr-24 tr-25";
 }
 
-#card::before {
-  content: '';
-  background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
-  filter: blur(2rem);
-  opacity: 30%;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  transition: 200ms;
-}
 
 .tr-1 {
   grid-area: tr-1;

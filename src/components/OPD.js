@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from './Footer';
 
 const OPDRequest = () => {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ const handleSubmit = async (e) => {
 
 
   return (
+    <>
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-2xl font-bold mb-6 text-center">Request an OPD Bed</h2>
@@ -81,14 +83,17 @@ const handleSubmit = async (e) => {
           </div>
           <button
             type="submit"
-            className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            className="w-full py-2 text-white rounded-lg transition-all bg-gradient-to-r from-orange-400 via-orange-600 to-red-500"
           >
             Submit Request
           </button>
         </form>
         
       </div>
+      
     </div>
+    <Footer />
+    </>
   );
 };
 

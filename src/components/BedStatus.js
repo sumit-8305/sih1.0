@@ -33,7 +33,7 @@ const BedStatus = () => {
   return (
     <>
     <div className='mt-48 container mx-auto px-4'>
-      <h1 className='text-3xl font-bold text-center mb-8' style={{color:"#005792"}}>Real-Time Bed Availability</h1>
+      <h1 className='text-3xl font-bold text-center mb-8' style={{color:"#FC5F2B"}}>Real-Time Bed Availability</h1>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
         {bedData.length > 0 ? (
           bedData.map((hospital) => (

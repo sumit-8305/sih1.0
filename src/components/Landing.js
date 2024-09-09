@@ -75,12 +75,34 @@ const Landing = () => {
           height: 'auto',
         }}
       >
-        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('bg.png')" }}>
-          <div className="absolute inset-0 bg-black opacity-30"></div>
-          {/* <div className="relative z-10 flex flex-col justify-center text-center  h-full px-4 md:px-16">
-            <h1 className="text-5xl md:text-6xl text-center  text-white font-semibold ">Manushi<br/></h1>
-            <h2 className="text-xl md:text-2xl text-white font-semibold ">By Us, For Us</h2>
-          </div> */}
+        <div className="relative h-screen bg-cover bg-center shadow-[0_0_90px_#000000] rounded-b-3xl" style={{ backgroundImage: "url('homepageimg.png')"}}>
+          <div className="absolute inset-0 opacity-30"></div>
+          <div className="relative z-10 flex flex-col justify-center text-center h-full px-4 md:px-16">
+            <h1 className="text-5xl md:text-6xl text-center  text-white" style={{textAlign: 'left'}}>Healthcare Simplified<br/></h1>
+
+            <br />
+            <h2 className="text-xl md:text-2xl text-white " style={{textAlign: 'left'}}><br />Streamline Healthcare with Manushi: Effortless OPD Management and <br />Real-Time Bed Status at Your Fingertips</h2>
+                      <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mt-8"
+            style={{textAlign: 'left',boxShadow: "white"}}
+          >
+            <button  className="
+    font-mono-sm
+      relative inline-flex
+      items-center
+      justify-center
+      px-8
+      py-4
+
+       bg-[#f65f2b] text-white pl-8 pr-8 pt-2 pb-2 shadow-[0_0_90px_#FFFFFF] rounded-sm transition duration-300 shadow-lg hover:shadow-[0_0_20px_#f65f2b]" style={{fontFamily:"Courier New"}}><a href='/aboutUs'>
+              Know More</a>
+            </button>
+          </motion.div>
+            
+          </div>
         </div>
 
         <div className='bg-[#e5e7eb]'>

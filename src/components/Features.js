@@ -31,6 +31,7 @@ const Features = () => {
       </div>
       <div className="container mx-auto p-4 bg-[#e5e7eb] ">
         <div className="flex justify-center gap-0">
+          
           <button
             className={` font-semibold p-2 rounded-lg ${activeSection === 1 ? ' bg-[#ff5e7e]' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(1)}
@@ -47,7 +48,7 @@ const Features = () => {
             className={` font-semibold p-2 rounded-lg ${activeSection === 3 ? 'bg-[#11c182]' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(3)}
           >
-            ☑ Action Plan
+            ☑ Action
           </button>
           <button
             className={` font-semibold p-2 rounded-lg ${activeSection === 4 ? 'bg-[#f7861e]' : 'bg-gray-200'} transition-all duration-500`}
@@ -63,7 +64,7 @@ const Features = () => {
           </button>
         </div>
 
-        <div className="content flex justify-center p-4 rounded-lg ">
+        <div className=" justify-center rounded-lg ">
           {renderContent()}
         </div>
       </div>  <section>

@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { login } from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
   const [username, setUsername] = useState('');
@@ -40,6 +41,7 @@ const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
 
 
   return (
+    <>
     <div
       style={{
         backgroundSize: 'cover',
@@ -100,7 +102,10 @@ const Login = ({ setIsLoggedIn, setHospitalName, setUniqueId }) => {
         
         </form>
       </div>
+      
     </div>
+    <Footer />
+    </>
   );
 };
 

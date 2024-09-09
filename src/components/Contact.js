@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Footer from './Footer';
 
 const Contact = () => {
   const form = useRef();
@@ -20,6 +21,7 @@ const Contact = () => {
   };
 
   return (
+    <>
     <div
       style={{
         backgroundSize: 'cover',
@@ -74,6 +76,8 @@ const Contact = () => {
         </form>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
