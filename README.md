@@ -108,4 +108,22 @@ Simply delete the .AppImage file as no installation occurs.
 
 <hr />
 
+
+Team details, relevant links, tasks completed, tech stack, key features, and steps to run the project locally.
+
+## Team Details
+
+*Team Name:* Manushi
+
+*Team Leader:* [@sumit-8305](https://github.com/sumit-8305) - Sumit
+
+*Team Members:*
+
+- *MEMBER_1* - 2023UEA6505 - [@chikoyeat](https://github.com/chikoyeat) - MANAV
+- *MEMBER_2* - 2023UCB6541 - [@asim-sidiqi](https://github.com/asim-sidiqi) - Asim Ahmad Siddiqui
+- *MEMBER_3* - 2023UEA6569 - [@Sattei](http://github.com/sattei) - Satyam Singh
+- *MEMBER_4* - 2023UEA6571 - [@grizzleyyybear](https://github.com/grizzleyyybear) - Mrinal Sharma
+- *MEMBER_5* - 2023UEA6536 - [@sumit-8305](https://github.com/sumit-8305) - Sumit
+- *MEMBER_6* - 2023UCI6539 - [@rajashre-e](http://guthub.com/rajashre-e) - Rajashree Sengupta
+
 Thank you for installing Manushi! If you encounter any issues, feel free to open a ticket in the repository or contact us for support.
