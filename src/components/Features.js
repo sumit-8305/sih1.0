@@ -51,13 +51,13 @@ const Features = () => {
             ☑ Action
           </button>
           <button
-            className={` font-semibold p-2 rounded-lg ${activeSection === 4 ? 'bg-[#f7861e]' : 'bg-gray-200'} transition-all duration-500`}
+            className={` font-semibold p-2 rounded-lg ${activeSection === 4 ? 'bg-yellow-200' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(4)}
           >
             📊 Data
           </button>
           <button
-            className={` font-semibold p-2 rounded-lg ${activeSection === 5 ? 'bg-[#3f3f46]' : 'bg-gray-200'} transition-all duration-500`}
+            className={` font-semibold p-2 rounded-lg ${activeSection === 5 ? 'bg-blue-200' : 'bg-gray-200'} transition-all duration-500`}
             onClick={() => setActiveSection(5)}
           >
             🏥 Hospitals
