@@ -1,6 +1,13 @@
 ### Manushi Installation Guide
 ![image](https://github.com/user-attachments/assets/f977d218-6a8c-4c2f-924f-45f938716f2f)
 
+
+### How to deploy to localhost
+node server.js
+
+npm run start
+
+### Application
 Welcome to the Manushi application! Below are the instructions to install Manushi on different Linux distributions using the provided package files.
 Available Packages
 
