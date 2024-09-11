@@ -16,7 +16,7 @@ import OPDRequest from './components/OPD';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [hospitalName, setHospitalName] = useState('');
+  const [setHospitalName] = useState('');
   const [uniqueId, setUniqueId] = useState('');
 
 useEffect(() => {

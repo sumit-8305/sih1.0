@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { updateBedAvailability, getBedAvailability } from '../services/api';
+import { updateBedAvailability } from '../services/api';
 import NavbarAdm from './Admin/Navbar';
 import Inventory from './Inventory';
 
 const Dashboard = ({ setHospitalName, uniqueId , hospitalName}) => {
-  const [hospitals, setHospitals] = useState([]);
+  const [setHospitals] = useState([]);
   const [availableBeds, setAvailableBeds] = useState(0);
   const [currentHospital, setCurrentHospital] = useState(null);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   const fetchHospitalNameByUniqueId = async (uniqueId) => {
     try {
