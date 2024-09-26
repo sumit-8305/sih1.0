@@ -76,17 +76,17 @@ const APIReference = () => {
             <p>You can use cURL to send a request from the command line:</p>
             <CopyBlock
               text={`curl -X POST http://localhost:5000/api/hospital/register \
-
   -H "Content-Type: application/json" \
-
-  -d '{{
+  -d '{
   "_id": "some_object_id",
-  "hospital_id": "some_hospital_id",
-  "uniqueId":"some_Id",
-  "name":"some_hospital",
-  "username": "testuser",
-  "password": "$2a$10$KIXz8nK.8QYX9nH6u.dfe6J3C1sM5y/Q1tV/BrJaE1gOob8ZzA2gq" // hashed password
-}}'`}
+  "totalBeds":100,
+  "availableBeds":100,
+  "hospital_id": "002",
+  "uniqueId": "fortis123",
+  "name": "fortis",
+  "username": "fortis.com",
+  "password": "fortis123"
+}'`}
               language={'cURL'}
               theme={nord}
               showLineNumbers={showLineNumbers}
